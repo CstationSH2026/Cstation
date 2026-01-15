@@ -23,13 +23,31 @@
         <section style="
             max-width: 640px;
             margin: 0 auto;
-            background: #f1f5f9; /* 已修改：背景色调整为与外部一致的 #f1f5f9 */
+            background: #f1f5f9;
             padding: 40px 25px;
             box-sizing: border-box;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             border: 1px solid rgba(255,255,255,0.8);
+            position: relative; /* 为定位 Home 链接做准备 */
         ">
             
+            <!-- 导航栏：回到主页 -->
+            <nav style="margin-bottom: 20px;">
+                <a href="#" style="
+                    text-decoration: none;
+                    color: #94a3b8;
+                    font-family: Arial, sans-serif;
+                    font-size: 12px;
+                    letter-spacing: 1px;
+                    font-weight: bold;
+                    display: inline-block;
+                    padding: 5px 0;
+                    border-bottom: 1px solid transparent;
+                ">
+                    ← HOME
+                </a>
+            </nav>
+
             <!-- 头部区域：居中设计 -->
             <header style="margin-bottom: 50px; text-align: center;">
                 
@@ -83,8 +101,18 @@
                     color: #94a3b8;
                     letter-spacing: 0.2em;
                     text-transform: uppercase;
-                    margin-bottom: 15px;
+                    margin-bottom: 10px;
                 ">Porcelain White Escape</div>
+
+                <!-- 新增：日期信息 -->
+                <div style="
+                    font-family: Arial, sans-serif;
+                    font-size: 11px;
+                    color: #cbd5e1;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                ">January 15, 2026</div>
                 
                 <div style="
                     font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
@@ -392,6 +420,29 @@
                     ">
                         只有那无尽的白色浪花，在船舷边翻涌，像是那间浴室里永远无法流尽的水，推着她向着未知的深渊冲刺。
                     </p>
+                </section>
+                
+                <!-- 结尾：封面图展示区域 -->
+                <section style="margin: 60px 0 20px 0; text-align: center;">
+                    <div style="
+                        display: inline-block;
+                        width: 70%;
+                        max-width: 280px;
+                        background: #fff;
+                        padding: 10px;
+                        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.05);
+                        transform: rotate(-2deg); /* 增加一点俏皮的立体感 */
+                        border-radius: 2px;
+                    ">
+                        <!-- 9:16 占位图，用户可替换 -->
+                        <img src="story 0115 bg02.jpg" alt="封面图" style="
+                            display: block;
+                            width: 100%;
+                            height: auto;
+                            aspect-ratio: 9/16;
+                            background-color: #f1f5f9;
+                        " />
+                    </div>
                 </section>
             </section>
 
