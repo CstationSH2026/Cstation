@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-STATION</title>
+    <style>
+        /* 核心兼容性样式 */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        summary:focus { outline: none; }
+        
+        /* 链接悬停效果 */
+        a.menu-link:active { background-color: #f1f5f9; }
+    </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+    <!-- 外部背景 -->
+    <section style="
+        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+        background-color: #f1f5f9;
+        background-image: linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+        background-size: 50px 50px;
+        min-height: 100vh;
+        padding: 20px 10px;
+        box-sizing: border-box;
+    ">
+
+        <!-- 主卡片 -->
+        <section style="
+            max-width: 640px;
+            margin: 0 auto;
+            background: #f8fafc; /* 极淡的灰白，比纯白更有质感 */
+            padding: 60px 30px;
+            box-sizing: border-box;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border: 1px solid #fff;
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+        ">
+            
+            <!-- 1. 品牌头部区域 -->
+            <header style="text-align: center; margin-bottom: 60px;">
+                
+                <!-- SVG Logo: 信号塔 -->
+                <div style="width: 100px; height: 100px; margin: 0 auto 35px auto;">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- 动态外环 -->
+                        <circle cx="50" cy="50" r="48" stroke="#cbd5e1" stroke-width="0.5" stroke-dasharray="4 4">
+                            <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="40s" repeatCount="indefinite"/>
+                        </circle>
+                        
+                        <!-- 动态内环 -->
+                        <circle cx="50" cy="50" r="35" stroke="#e2e8f0" stroke-width="1">
+                            <animate attributeName="r" values="35;37;35" dur="4s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="1;0.5;1" dur="4s" repeatCount="indefinite"/>
+                        </circle>
+
+                        <!-- 核心符号 C -->
+                        <path d="M60 35 C 50 25, 30 25, 25 50 C 20 75, 40 80, 55 75" stroke="#334155" stroke-width="3" stroke-linecap="round"/>
+                        
+                        <!-- 信号点 -->
+                        <circle cx="50" cy="50" r="2" fill="#334155"/>
+                        <circle cx="70" cy="20" r="1.5" fill="#94a3b8">
+                             <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+                        </circle>
+                    </svg>
+                </div>
+
+                <h1 style="
+                    font-size: 32px; 
+                    color: #0f172a; 
+                    margin: 0 0 8px 0; 
+                    letter-spacing: 0.1em;
+                    font-weight: 700;
+                ">C活灵感站</h1>
+                
+                <div style="
+                    font-family: Arial, sans-serif;
+                    font-size: 10px;
+                    color: #94a3b8;
+                    letter-spacing: 4px;
+                    text-transform: uppercase;
+                    margin-bottom: 25px;
+                ">C-STATION</div>
+
+                <!-- 装饰分割线 -->
+                <div style="display: flex; justify-content: center; gap: 5px;">
+                    <span style="width: 4px; height: 4px; background: #cbd5e1; border-radius: 50%;"></span>
+                    <span style="width: 40px; height: 1px; background: #cbd5e1; margin-top: 2px;"></span>
+                    <span style="width: 4px; height: 4px; background: #cbd5e1; border-radius: 50%;"></span>
+                </div>
+            </header>
+
+            <!-- 2. 目录导航区域 -->
+            <section style="flex-grow: 1;">
+                
+                <!-- Vol.01 故事 -->
+                <details open style="margin-bottom: 30px;">
+                    <summary style="
+                        cursor: pointer;
+                        padding: 15px 0;
+                        border-bottom: 2px solid #0f172a; /* 加粗线条强调选中感 */
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-end;
+                    ">
+                        <div>
+                            <span style="font-size: 18px; font-weight: bold; color: #0f172a;">VOL.01 故事</span>
+                        </div>
+                        <span style="font-family: Arial, sans-serif; font-size: 10px; color: #64748b; letter-spacing: 1px; font-weight: bold;">STORIES</span>
+                    </summary>
+                    
+                    <!-- 展开的内容 -->
+                    <div style="padding-top: 15px;">
+                        <a href="story01152016/index.html" class="menu-link" style="
+                            display: block;
+                            text-decoration: none;
+                            padding: 15px;
+                            background: #fff;
+                            border: 1px solid #e2e8f0;
+                            margin-bottom: 10px;
+                            transition: all 0.2s;
+                        ">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                                <span style="font-size: 16px; color: #334155; font-weight: bold;">瓷白色的逃亡</span>
+                                <span style="font-size: 12px; color: #94a3b8;">→</span>
+                            </div>
+                            <div style="font-size: 12px; color: #94a3b8; font-family: Arial, sans-serif;">
+                                JAN 15, 2026
+                            </div>
+                        </a>
+                    </div>
+                </details>
+
+                <!-- Vol.02 事件 -->
+                <details style="margin-bottom: 30px;">
+                    <summary style="
+                        cursor: pointer;
+                        padding: 15px 0;
+                        border-bottom: 1px solid #cbd5e1;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-end;
+                        color: #64748b;
+                    ">
+                        <div>
+                            <span style="font-size: 18px;">VOL.02 事件</span>
+                        </div>
+                        <span style="font-family: Arial, sans-serif; font-size: 10px; color: #cbd5e1; letter-spacing: 1px;">EVENTS</span>
+                    </summary>
+                    
+                    <div style="padding: 20px 0; color: #cbd5e1; font-size: 13px; font-style: italic; text-align: center;">
+                        暂无近期事件
+                    </div>
+                </details>
+
+                <!-- Vol.03 影像 -->
+                <details style="margin-bottom: 30px;">
+                    <summary style="
+                        cursor: pointer;
+                        padding: 15px 0;
+                        border-bottom: 1px solid #cbd5e1;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-end;
+                        color: #64748b;
+                    ">
+                        <div>
+                            <span style="font-size: 18px;">VOL.03 影像</span>
+                        </div>
+                        <span style="font-family: Arial, sans-serif; font-size: 10px; color: #cbd5e1; letter-spacing: 1px;">VISUALS</span>
+                    </summary>
+                    
+                    <!-- 空状态提示 -->
+                    <div style="padding: 20px 0; color: #cbd5e1; font-size: 13px; font-style: italic; text-align: center;">
+                        暗房冲洗中...
+                    </div>
+                </details>
+
+            </section>
+
+            <!-- 3. 底部版权 -->
+            <footer style="
+                text-align: center;
+                margin-top: 40px;
+                border-top: 1px dashed #e2e8f0;
+                padding-top: 20px;
+            ">
+                <div style="font-size: 10px; color: #cbd5e1; letter-spacing: 2px; font-family: Arial, sans-serif;">
+                    © 2026 C-STATION
+                </div>
+            </footer>
+
+        </section>
+    </section>
+
+</body>
+</html>
