@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sandy的手记：都会荒诞剧</title>
+</head>
+<body style="margin: 0; padding: 0; overflow-x: hidden; -webkit-text-size-adjust: 100%;">
+
+    <!-- 最外层容器：背景与基础字体 -->
+    <section style="
+        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+        background-color: #f1f5f9;
+        background-image: linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+        background-size: 50px 50px;
+        min-height: 100vh;
+        padding: 15px;
+        box-sizing: border-box;
+        text-align: left;
+    ">
+
+        <!-- 阅读卡片容器 -->
+        <section style="
+            max-width: 640px;
+            margin: 0 auto;
+            background: #f1f5f9;
+            padding: 30px 20px;
+            box-sizing: border-box;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(255,255,255,0.8);
+            width: 100%;
+        ">
+            
+            <!-- 导航栏：回到主页 -->
+            <nav style="margin-bottom: 20px;">
+                <a href="../index.html" style="
+                    text-decoration: none;
+                    color: #94a3b8;
+                    font-family: Arial, sans-serif;
+                    font-size: 12px;
+                    letter-spacing: 1px;
+                    font-weight: bold;
+                    display: inline-block;
+                    padding: 5px 0;
+                    border-bottom: 1px solid transparent;
+                ">
+                    ← HOME
+                </a>
+            </nav>
+
+            <!-- 头部区域 -->
+            <header style="margin-bottom: 50px; text-align: center;">
+                
+                <!-- SVG 插图：失控的遥控车 -->
+                <div style="width: 140px; height: 100px; margin: 0 auto 20px auto;">
+                    <svg viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+                        <g>
+                            <!-- 车身抖动动画：模拟急停或失控 -->
+                            <animateTransform 
+                                attributeName="transform" 
+                                type="rotate" 
+                                values="0 70 50; 1 70 50; -1 70 50; 0 70 50" 
+                                dur="0.15s" 
+                                repeatCount="indefinite" 
+                            />
+                            
+                            <!-- 遥控车天线 -->
+                            <line x1="90" y1="40" x2="90" y2="10" stroke="#334155" stroke-width="1"/>
+                            <circle cx="90" cy="10" r="2" fill="#ef4444">
+                                <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/>
+                            </circle>
+
+                            <!-- 车身 -->
+                            <path d="M20 50 L 120 50 L 120 70 L 20 70 Z" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+                            <!-- 车顶流线 -->
+                            <path d="M30 50 L 45 35 L 95 35 L 110 50" fill="none" stroke="#334155" stroke-width="2"/>
+                            
+                            <!-- 红色警示条纹 -->
+                            <rect x="25" y="55" width="90" height="4" fill="#ef4444" opacity="0.8"/>
+
+                            <!-- 车轮 -->
+                            <circle cx="35" cy="70" r="8" fill="#334155"/>
+                            <circle cx="45" cy="70" r="4" fill="#e2e8f0"/>
+                            <circle cx="105" cy="70" r="8" fill="#334155"/>
+                            <circle cx="95" cy="70" r="4" fill="#e2e8f0"/>
+                        </g>
+                        
+                        <!-- 刹车痕迹/速度线 -->
+                        <path d="M10 75 L 25 75" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="2 2"/>
+                        <path d="M5 80 L 20 80" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="2 2"/>
+                    </svg>
+                </div>
+
+                <h1 style="
+                    font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                    font-weight: 700;
+                    letter-spacing: 0.1em;
+                    color: #0f172a;
+                    font-size: 26px; 
+                    line-height: 1.4;
+                    margin: 0 0 10px 0;
+                    text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                ">Sandy的手记：<br>都会荒诞剧</h1>
+                
+                <div style="
+                    font-family: Arial, sans-serif;
+                    font-size: 12px;
+                    color: #94a3b8;
+                    letter-spacing: 0.2em;
+                    text-transform: uppercase;
+                    margin-bottom: 15px;
+                ">Urban Absurdist Drama</div>
+
+                <!-- 日期信息 -->
+                <div style="
+                    font-family: Arial, sans-serif;
+                    font-size: 11px;
+                    color: #cbd5e1;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                ">January 16, 2026 · 06:30 AM</div>
+                
+                <div style="
+                    font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                    font-size: 14px;
+                    color: #64748b;
+                    font-style: italic;
+                ">记录者 / Sandy</div>
+            </header>
+
+            <!-- 正文内容 -->
+            <section style="text-align: left;">
+                
+                <!-- 引言 -->
+                <div style="
+                    font-size: 15px;
+                    line-height: 1.8;
+                    color: #64748b;
+                    margin-bottom: 40px;
+                    text-align: justify;
+                    font-style: italic;
+                    padding: 15px;
+                    background: rgba(255,255,255,0.5);
+                    border-left: 2px solid #cbd5e1;
+                ">
+                    梦里越是喧嚣，醒来越是荒凉。我们在名利场的边门偷偷溜走，怀里揣着几颗花生米，冷眼旁观着这艘名为生活的巨轮，在一片叫好声中缓缓下沉。这是一场关于体面与生存的都市独角戏。
+                </div>
+
+                <!-- 章节 01 -->
+                <section style="margin-bottom: 40px;">
+                    <h2 style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                        font-size: 18px;
+                        letter-spacing: 0.05em;
+                        color: #1e293b;
+                        margin: 40px 0 20px 0;
+                        font-weight: bold;
+                        border-left: 4px solid #ef4444; /* 警示红 */
+                        padding-left: 12px;
+                        line-height: 1.2;
+                    ">
+                        01. 失控的玩具与强制的体面
+                    </h2>
+                    
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        人总以为手里握着那个遥控器，就能置身事外，操控大局。真是天真得可爱。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        梦里我开那辆遥控车，人不在车上，姿势倒是摆得优雅，以为能运筹帷幄。结果呢？电光火石间，红灯一闪，车子失控越线。那一阵心悸，绝非为了那辆车。惊的是这遥控电车一记违章便是六分，年内积分眼看要不够用。在这名利场打滚，额度一旦透支，随时被踢出局，哪还有转圜余地。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        警察来了，黑口黑面。我也算是见惯场面的人，却被带进局子里，接受所谓的“教育”。最荒谬的是那惩罚——一碗麻辣烫。
+                    </p>
+                    <blockquote style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                        border-left: 3px solid #ef4444; /* 红色强调 */
+                        margin: 30px 0;
+                        padding: 15px 20px;
+                        font-style: italic;
+                        color: #64748b;
+                        background: #fff1f2; /* 淡淡的红色背景 */
+                        font-size: 15px;
+                        line-height: 1.6;
+                    ">
+                        吃完了，还得擦擦嘴，对着那张冷脸违心地说一声：“味道极好，五星好评。”
+                    </blockquote>
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        这不就是我们每天在做的事？职场上受了气，吞进肚子里，转头还得对着老板说“谢谢指教”。为了那点分数，为了那点体面，什么辛辣咽不下去？做人，到底还是身不由己的时候多。
+                    </p>
+                </section>
+
+                <!-- 动态波浪分割线 -->
+                <div style="margin: 40px 0; overflow: hidden; text-align: center;">
+                    <svg width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="none" style="max-width: 600px; display: inline-block;">
+                         <path d="M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 4">
+                            <animate attributeName="d" values="M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10; M0 10 Q 75 20, 150 10 T 300 10 T 450 10 T 600 10; M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10" dur="8s" repeatCount="indefinite"/>
+                        </path>
+                    </svg>
+                </div>
+
+                <!-- 章节 02 -->
+                <section style="margin-bottom: 40px;">
+                    <h2 style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                        font-size: 18px;
+                        letter-spacing: 0.05em;
+                        color: #1e293b;
+                        margin: 40px 0 20px 0;
+                        font-weight: bold;
+                        border-left: 4px solid #ef4444;
+                        padding-left: 12px;
+                        line-height: 1.2;
+                    ">
+                        02. 豪宅迷宫与那一碟花生
+                    </h2>
+
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        场景转到北京，灰蒙蒙的天，说是个顶级地产项目。那位年薪数百万的女项目总也在，一身剪裁合宜的套装，指点江山。我远远瞧见她，立刻转身就走。并非怕她，而是嫌累。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        我找了个底楼的小边门溜了出去。那门通往老人的住处，破败，但胜在清净，没有那些金碧辉煌的压迫感。手里提着一袋凉菜，有猪耳朵，还有一包花生。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        在那座钢筋水泥的迷宫里，这点粗食竟成了唯一的真实。大家分食那包花生，啧啧称赞：“味道正宗。”那一刻我竟动了真情，想把这花生当作土特产带回家。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        在这个虚荣的城市里，到最后能让人觉得踏实入胃的，不过是这几颗咸脆的花生米。至于那些宏图大业？谁知道能不能兑现。花生咽下肚，才是自己的。
+                    </p>
+                </section>
+
+                <!-- 动态波浪分割线 -->
+                <div style="margin: 40px 0; overflow: hidden; text-align: center;">
+                    <svg width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="none" style="max-width: 600px; display: inline-block;">
+                         <path d="M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 4">
+                            <animate attributeName="d" values="M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10; M0 10 Q 75 20, 150 10 T 300 10 T 450 10 T 600 10; M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10" dur="8s" repeatCount="indefinite"/>
+                        </path>
+                    </svg>
+                </div>
+
+                <!-- 章节 03 -->
+                <section style="margin-bottom: 40px;">
+                    <h2 style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                        font-size: 18px;
+                        letter-spacing: 0.05em;
+                        color: #1e293b;
+                        margin: 40px 0 20px 0;
+                        font-weight: bold;
+                        border-left: 4px solid #ef4444;
+                        padding-left: 12px;
+                        line-height: 1.2;
+                    ">
+                        03. 沉船前的华丽舞会
+                    </h2>
+
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        最后是一场综艺大会，锣鼓喧天。压轴是个日本歌手，唱得是真好，那种专业的煽动力，让人几乎要跟着落泪。我看着台上的灯光，恍惚间以为正身处盛世。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        但冷风一吹，我那点刻薄的清醒又回来了。我站在台下，裹紧了大衣，心里只有一个念头：“这公司账面上不是早就赤字连连了吗？哪来的钱搞这些排场？”
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        这简直像是泰坦尼克号沉没前的舞会，船都要沉了，还在甲板上拉小提琴，粉饰太平。大家都在欢呼，为那稍纵即逝的高音喝彩。我却只觉得悲凉。
+                    </p>
+                    <p style="
+                        font-size: 16px; 
+                        line-height: 1.8; 
+                        color: #64748b; 
+                        margin-bottom: 24px; 
+                        text-align: left; 
+                        font-weight: bold; 
+                        margin-top: 30px; 
+                        padding: 15px; 
+                        background: rgba(239, 68, 68, 0.05); /* 红色微背景 */
+                        border-radius: 4px;
+                    ">
+                        这就是都会生活，明明口袋里没几个钱，面子上却要做到十足十。
+                    </p>
+                </section>
+
+                <!-- 结尾：封面图展示区域 -->
+                <section style="margin: 60px 0 20px 0; text-align: center;">
+                    <div style="
+                        display: inline-block;
+                        width: 70%;
+                        max-width: 280px;
+                        background: #fff;
+                        padding: 10px;
+                        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.05);
+                        transform: rotate(2deg); /* 这里让他向右倾斜一点，区别于上一篇 */
+                        border-radius: 2px;
+                    ">
+                        <!-- 9:16 占位图，这里预留给您的新封面 -->
+                        <img src="story 0115 bg01.jpg" alt="Urban Absurdist Drama Cover" style="
+                            display: block;
+                            width: 100%;
+                            height: auto; /* 让高度自动适应图片原始比例，确保不被裁切 */
+                            background-color: #e2e8f0;
+                        " />
+                    </div>
+                </section>
+
+                <!-- 梦醒结语 -->
+                <section style="margin-top: 40px; padding-top: 20px; border-top: 1px dashed #cbd5e1;">
+                    <p style="font-size: 15px; color: #64748b; line-height: 1.8; text-align: justify;">
+                        <span style="font-weight:bold; color: #334155;">【梦醒】</span>
+                        醒来时，窗外天色微亮。我起身倒了一杯冰水，喝下去，才把梦里那碗麻辣烫的腻味压下去。梦是荒诞的，但现实恐怕更荒诞。我们小心翼翼地遥控着人生，心里盘算的，无非是怎样在积分扣光之前，体体面面地活下去。
+                    </p>
+                </section>
+
+            </section>
+
+            <!-- 页尾 -->
+            <footer style="
+                text-align: center;
+                margin-top: 60px;
+                padding-top: 30px;
+                border-top: 1px solid #e2e8f0;
+                color: #94a3b8;
+                font-size: 12px;
+                letter-spacing: 0.2em;
+            ">
+                FIN
+                <div style="display: flex; justify-content: center; margin-top: 15px; gap: 8px;">
+                    <div style="width: 4px; height: 4px; background: #cbd5e1; border-radius: 50%;"></div>
+                    <div style="width: 4px; height: 4px; background: #ef4444; border-radius: 50%;"></div>
+                    <div style="width: 4px; height: 4px; background: #cbd5e1; border-radius: 50%;"></div>
+                </div>
+            </footer>
+
+        </section>
+    </section>
+
+</body>
+</html>
