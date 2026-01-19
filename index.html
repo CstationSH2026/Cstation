@@ -5,13 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C-STATION</title>
     <style>
-        /* 核心兼容性样式 */
+        /* --- 1. 核心兼容性样式 --- */
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
         summary:focus { outline: none; }
         
-        /* 链接悬停效果 */
-        a.menu-link:active { background-color: #f1f5f9; }
+        /* --- 2. 文章卡片样式 (来自上一版) --- */
+        .menu-link {
+            display: block;
+            text-decoration: none;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .menu-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: #cbd5e1;
+            background-color: #fafafa;
+        }
+
+        .menu-link:active {
+            background-color: #f1f5f9;
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 16px;
+            color: #334155;
+            font-weight: 700;
+        }
+
+        .arrow {
+            font-size: 14px;
+            color: #cbd5e1;
+        }
+
+        .date {
+            font-size: 12px;
+            color: #94a3b8;
+            font-family: monospace;
+            letter-spacing: 0.5px;
+        }
     </style>
 </head>
 <body style="margin: 0; padding: 0;">
@@ -31,7 +77,7 @@
         <section style="
             max-width: 640px;
             margin: 0 auto;
-            background: #f8fafc; /* 极淡的灰白，比纯白更有质感 */
+            background: #f8fafc;
             padding: 60px 30px;
             box-sizing: border-box;
             box-shadow: 0 20px 40px rgba(0,0,0,0.05);
@@ -102,7 +148,7 @@
                     <summary style="
                         cursor: pointer;
                         padding: 15px 0;
-                        border-bottom: 2px solid #0f172a; /* 加粗线条强调选中感 */
+                        border-bottom: 2px solid #0f172a;
                         display: flex;
                         justify-content: space-between;
                         align-items: flex-end;
@@ -113,144 +159,47 @@
                         <span style="font-family: Arial, sans-serif; font-size: 10px; color: #64748b; letter-spacing: 1px; font-weight: bold;">STORIES</span>
                     </summary>
                     
-                    <!-- 展开的内容 -->
-                   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cstation</title>
-    <style>
-        /* 这里是网页的样式设置 */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f8fafc; /* 浅灰背景 */
-            color: #334155;
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-        }
+                    <!-- 展开的内容：文章列表 -->
+                    <div style="padding-top: 20px;">
+                        
+                        <!-- 1月18日 (最新) -->
+                        <a href="story01182026/index.html" class="menu-link">
+                            <div class="card-top">
+                                <span class="title">高跟鞋与回头路</span>
+                                <span class="arrow">→</span>
+                            </div>
+                            <div class="date">JAN 18, 2026</div>
+                        </a>
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto; /* 居中显示 */
-        }
+                        <!-- 1月17日 -->
+                        <a href="story01172026/index.html" class="menu-link">
+                            <div class="card-top">
+                                <span class="title">盲盒与微醺</span>
+                                <span class="arrow">→</span>
+                            </div>
+                            <div class="date">JAN 17, 2026</div>
+                        </a>
 
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            margin-top: 20px;
-        }
+                        <!-- 1月16日 -->
+                        <a href="story01162026/index.html" class="menu-link">
+                            <div class="card-top">
+                                <span class="title">都会荒诞剧</span>
+                                <span class="arrow">→</span>
+                            </div>
+                            <div class="date">JAN 16, 2026</div>
+                        </a>
 
-        .header h1 {
-            font-size: 24px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            margin: 0;
-            color: #1e293b;
-        }
-
-        .header p {
-            font-size: 14px;
-            color: #64748b;
-            margin-top: 5px;
-        }
-
-        /* 文章卡片样式 */
-        .menu-link {
-            display: block;
-            text-decoration: none;
-            padding: 20px;
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px; /* 圆角更柔和 */
-            margin-bottom: 15px;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .menu-link:hover {
-            transform: translateY(-2px); /* 鼠标悬停时轻微上浮 */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            border-color: #cbd5e1;
-        }
-
-        .card-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .title {
-            font-size: 17px;
-            color: #334155;
-            font-weight: 700;
-        }
-
-        .arrow {
-            font-size: 14px;
-            color: #cbd5e1;
-        }
-
-        .date {
-            font-size: 12px;
-            color: #94a3b8;
-            font-family: monospace; /* 日期用等宽字体更有设计感 */
-            letter-spacing: 0.5px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <!-- 网站标题区域 -->
-        <div class="header">
-            <h1>Cstation</h1>
-            <p>Personal Archive</p>
-        </div>
-
-        <!-- 文章列表区域 -->
-        <div class="article-list">
-
-            <!-- 1月18日 (最新) -->
-            <!-- 假设文件夹名为 story01182026，如果不是请自行修改 -->
-            <a href="story01182026/index.html" class="menu-link">
-                <div class="card-top">
-                    <span class="title">高跟鞋与回头路</span>
-                    <span class="arrow">→</span>
-                </div>
-                <div class="date">JAN 18, 2026</div>
-            </a>
-
-            <!-- 1月17日 -->
-            <!-- 假设文件夹名为 story01172026 -->
-            <a href="story01172026/index.html" class="menu-link">
-                <div class="card-top">
-                    <span class="title">盲盒与微醺</span>
-                    <span class="arrow">→</span>
-                </div>
-                <div class="date">JAN 17, 2026</div>
-            </a>
-
-            <!-- 1月16日 (已修改标题) -->
-            <a href="story01162026/index.html" class="menu-link">
-                <div class="card-top">
-                    <span class="title">都会荒诞剧</span>
-                    <span class="arrow">→</span>
-                </div>
-                <div class="date">JAN 16, 2026</div>
-            </a>
-
-            <!-- 1月15日 -->
-            <a href="story01152016/index.html" class="menu-link">
-                <div class="card-top">
-                    <span class="title">瓷白色的逃亡</span>
-                    <span class="arrow">→</span>
-                </div>
-                <div class="date">JAN 15, 2026</div>
-            </a>
-
-        </div>
-    </div>
+                        <!-- 1月15日 -->
+                        <a href="story01152016/index.html" class="menu-link">
+                            <div class="card-top">
+                                <span class="title">瓷白色的逃亡</span>
+                                <span class="arrow">→</span>
+                            </div>
+                            <div class="date">JAN 15, 2026</div>
+                        </a>
+                        
+                    </div>
+                </details>
 
                 <!-- Vol.02 事件 -->
                 <details style="margin-bottom: 30px;">
