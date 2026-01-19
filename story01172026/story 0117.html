@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cathy的手记：盲盒与微醺</title>
+</head>
+<body style="margin: 0; padding: 0; overflow-x: hidden; -webkit-text-size-adjust: 100%;">
+
+    <!-- 最外层容器：纸张纹理背景 -->
+    <section style="
+        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+        background-color: #fcfcfc;
+        background-image: radial-gradient(#e5e5e5 1px, transparent 1px);
+        background-size: 20px 20px;
+        min-height: 100vh;
+        padding: 15px;
+        box-sizing: border-box;
+        text-align: left;
+    ">
+
+        <!-- 阅读卡片容器 -->
+        <section style="
+            max-width: 640px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px 25px;
+            box-sizing: border-box;
+            box-shadow: 0 5px 25px rgba(139, 0, 0, 0.05); /* 微微的酒红色阴影 */
+            border: 1px solid rgba(0,0,0,0.02);
+            width: 100%;
+        ">
+            
+            <!-- 导航栏：回到主页 -->
+            <nav style="margin-bottom: 30px;">
+                <a href="index.html" style="
+                    text-decoration: none;
+                    color: #800020; /* 酒红色 */
+                    font-family: Arial, sans-serif;
+                    font-size: 12px;
+                    letter-spacing: 1px;
+                    font-weight: bold;
+                    display: inline-block;
+                    padding: 5px 0;
+                    border-bottom: 1px solid transparent;
+                    opacity: 0.6;
+                ">
+                    ← HOME
+                </a>
+            </nav>
+
+            <!-- 头部区域 -->
+            <header style="margin-bottom: 50px; text-align: center;">
+                
+                <!-- SVG 插图：红酒与夜色 (SMIL 动画) -->
+                <div style="width: 180px; height: 180px; margin: 0 auto 20px auto;">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+                        
+                        <!-- 背景光晕 -->
+                        <circle cx="100" cy="100" r="70" fill="#800020" opacity="0.05" />
+
+                        <!-- 红酒瓶 (左侧) -->
+                        <g transform="translate(40, 40) scale(0.8)">
+                            <!-- 瓶身 -->
+                            <path d="M20,0 L40,0 L45,30 L60,150 L0,150 L15,30 Z" fill="#2c0005" />
+                            <!-- 瓶标 -->
+                            <rect x="10" y="80" width="40" height="40" fill="#f0e6d2" rx="2" />
+                            <rect x="15" y="90" width="30" height="2" fill="#800020" />
+                            <rect x="15" y="95" width="20" height="2" fill="#800020" opacity="0.5" />
+                            <!-- 瓶口反光 -->
+                            <path d="M22,5 L24,5 L24,25 L22,25 Z" fill="#fff" opacity="0.3" />
+                        </g>
+
+                        <!-- 高脚杯 (右侧) -->
+                        <g transform="translate(100, 80) scale(0.8)">
+                            <!-- 杯脚 -->
+                            <line x1="30" y1="60" x2="30" y2="100" stroke="#333" stroke-width="2" />
+                            <path d="M15,100 L45,100" stroke="#333" stroke-width="2" stroke-linecap="round" />
+                            
+                            <!-- 杯身 (轮廓) -->
+                            <path d="M10,0 Q10,60 30,60 Q50,60 50,0" fill="none" stroke="#333" stroke-width="1.5" />
+                            
+                            <!-- 酒液 (动态 SMIL 动画) -->
+                            <path fill="#800020" opacity="0.8">
+                                <animate attributeName="d" 
+                                    values="M11,30 Q30,32 49,30 Q49,60 30,60 Q11,60 11,30;
+                                            M11,28 Q30,26 49,28 Q49,60 30,60 Q11,60 11,28;
+                                            M11,30 Q30,32 49,30 Q49,60 30,60 Q11,60 11,30"
+                                    dur="4s" 
+                                    repeatCount="indefinite" 
+                                    calcMode="spline" 
+                                    keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" />
+                            </path>
+
+                            <!-- 杯壁反光 -->
+                            <path d="M14,5 Q14,40 20,50" fill="none" stroke="#fff" stroke-width="2" opacity="0.3" />
+                        </g>
+
+                        <!-- 欲滴的酒珠 (动态) -->
+                        <circle cx="100" cy="80" r="2" fill="#800020">
+                            <animate attributeName="cy" values="80; 100" dur="3s" repeatCount="indefinite" begin="1s" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 1 1" />
+                            <animate attributeName="opacity" values="1; 0" dur="3s" repeatCount="indefinite" begin="1s" />
+                        </circle>
+
+                    </svg>
+                </div>
+
+                <h1 style="
+                    font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                    font-weight: 700;
+                    letter-spacing: 0.1em;
+                    color: #2c0005; /* 深酒红 */
+                    font-size: 24px; 
+                    line-height: 1.4;
+                    margin: 0 0 10px 0;
+                ">Cathy的手记：<br>盲盒与微醺</h1>
+                
+                <div style="
+                    font-family: Arial, sans-serif;
+                    font-size: 12px;
+                    color: #800020;
+                    letter-spacing: 0.2em;
+                    text-transform: uppercase;
+                    margin-bottom: 15px;
+                    opacity: 0.7;
+                ">Blind Boxes & Tipsiness</div>
+
+                <!-- 日期信息 -->
+                <div style="
+                    font-family: Arial, sans-serif;
+                    font-size: 11px;
+                    color: #999;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                ">04:15 AM · Cathy</div>
+                
+            </header>
+
+            <!-- 正文内容 -->
+            <section style="text-align: left;">
+                
+                <!-- 章节 01 -->
+                <section style="margin-bottom: 40px;">
+                    <h2 style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                        font-size: 18px;
+                        letter-spacing: 0.05em;
+                        color: #444;
+                        margin: 40px 0 20px 0;
+                        font-weight: bold;
+                        border-left: 4px solid #800020; /* 酒红色边框 */
+                        padding-left: 12px;
+                        line-height: 1.2;
+                    ">
+                        01. 虚线的日期
+                    </h2>
+                    
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        梦里出现一样东西，像日历，又像是盲盒。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        起初的格子，每一个都标记分明，打开来里面有确定的物件。那种感觉很安稳，像安排好的人生，没有意外。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        但到了中间，格子忽然没了实体。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        它们变成了一圈圈轮廓线，像未干的草图，悬浮在那里。没有说明书，也没有既定答案，仿佛需要我去重新组合，去填满它。盒子裡头也是随机的，有些打开是满的，有些空空如也。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        我也没觉得慌，梦里的人总是这样，遇见什么便是什么。只觉得这大概就是日子的真相：前半截是命定，后半截是运气，剩下那些轮廓，全看你自己怎么描。
+                    </p>
+                </section>
+
+                <!-- 动态波浪分割线 (SVG SMIL - 酒红色) -->
+                <div style="margin: 40px 0; overflow: hidden; text-align: center;">
+                    <svg width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="none" style="max-width: 600px; display: inline-block;">
+                         <path d="M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10" fill="none" stroke="#800020" stroke-width="1" stroke-dasharray="4 4" opacity="0.3">
+                            <animate attributeName="d" values="M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10; M0 10 Q 75 20, 150 10 T 300 10 T 450 10 T 600 10; M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10" dur="10s" repeatCount="indefinite"/>
+                        </path>
+                    </svg>
+                </div>
+
+                <!-- 章节 02 -->
+                <section style="margin-bottom: 40px;">
+                    <h2 style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                        font-size: 18px;
+                        letter-spacing: 0.05em;
+                        color: #444;
+                        margin: 40px 0 20px 0;
+                        font-weight: bold;
+                        border-left: 4px solid #800020;
+                        padding-left: 12px;
+                        line-height: 1.2;
+                    ">
+                        02. 隐身的千金
+                    </h2>
+
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        场景一转，到了那家大得吓人的公司。我们在策划一个大型亲子活动，名单上全是带着孩子的明星，排场极大。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        我的朋友就在我不远处，也是我的同事，一个小小的职员。我们同属一个部门，为了那些琐碎的流程忙得不可开交。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        梦里的逻辑很奇怪，心里明明清楚得很——这家公司的董事长是她母亲，她父亲更是背景深厚的政府高官，这秘密全公司没几个人知晓，偏偏我就知道。
+                    </p>
+                    <blockquote style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                        border-left: 3px solid #800020;
+                        margin: 30px 0;
+                        padding: 15px 20px;
+                        font-style: italic;
+                        color: #555;
+                        background: rgba(128, 0, 32, 0.03); /* 极淡的酒红背景 */
+                        font-size: 15px;
+                        line-height: 1.6;
+                    ">
+                        “身世这东西，在梦里那无尽的加班面前，似乎也变得不那么重要了，大家都不过是为了把这个Case赶出来的过河卒子。”
+                    </blockquote>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        但大家都在忙，没人去点破这层窗户纸。她也就那么安安静静地做着她的工作，不显山不露水。我看着她，觉得这情景既荒谬又真实。
+                    </p>
+                </section>
+
+                <!-- 动态波浪分割线 -->
+                <div style="margin: 40px 0; overflow: hidden; text-align: center;">
+                    <svg width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="none" style="max-width: 600px; display: inline-block;">
+                         <path d="M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10" fill="none" stroke="#800020" stroke-width="1" stroke-dasharray="4 4" opacity="0.3">
+                            <animate attributeName="d" values="M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10; M0 10 Q 75 20, 150 10 T 300 10 T 450 10 T 600 10; M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10" dur="10s" repeatCount="indefinite"/>
+                        </path>
+                    </svg>
+                </div>
+
+                <!-- 章节 03 -->
+                <section style="margin-bottom: 40px;">
+                    <h2 style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                        font-size: 18px;
+                        letter-spacing: 0.05em;
+                        color: #444;
+                        margin: 40px 0 20px 0;
+                        font-weight: bold;
+                        border-left: 4px solid #800020;
+                        padding-left: 12px;
+                        line-height: 1.2;
+                    ">
+                        03. 两小时的赌注
+                    </h2>
+
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        夜深了，为了助兴，或是为了缓解焦虑，同事拿来了红酒。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        那是一种半劝半逼的氛围，大家都喝，你也得喝。“喝一口吧，两个小时酒精就散了，没事的。”他们这么说。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        我心里是担心的。梦里的我依然还有着现实的顾虑：一会儿还要开车，万一查出酒驾怎么办？那可是原则问题。但在那种环境下，人是被推着走的，拒绝的话到了嘴边又咽下去。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        我还是喝了。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        入口却是一怔。没有预想中的辛辣与酒气，淡得很，像果汁一样清爽，甚至有点好喝。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        我握着杯子，心里那块石头却没落地。嘴里是果汁味，脑子里想的却是那“两小时”的时限。这酒到底有没有度数？等会儿若是被拦下，这算不算酒驾？
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        周围人声嘈杂，我喝着那杯不知是酒是汁的东西，在这个未完的梦里，悬着一颗心，等待着散场。
+                    </p>
+                </section>
+
+                <!-- 结尾：海报展示位 -->
+                <section style="margin: 60px 0 20px 0; text-align: center;">
+                    <div style="
+                        display: inline-block;
+                        width: 70%;
+                        max-width: 280px;
+                        background: #fff;
+                        padding: 10px;
+                        box-shadow: 0 20px 40px -10px rgba(128,0,32,0.15), 0 0 0 1px rgba(0,0,0,0.05);
+                        transform: rotate(1deg);
+                        border-radius: 2px;
+                    ">
+                        <!-- 海报占位 -->
+                        <img src="poster_placeholder_cathy.jpg" alt="Cathy Dream Poster" style="
+                            display: block;
+                            width: 100%;
+                            height: auto;
+                            background-color: #fdf5f5;
+                            min-height: 400px;
+                        " />
+                    </div>
+                </section>
+
+                <!-- 推荐摘要 -->
+                <section style="
+                    margin-top: 40px; 
+                    background-color: #fcfcfc; 
+                    padding: 20px; 
+                    border-left: 4px solid #2c0005; 
+                    font-style: italic;
+                    color: #555;
+                    border: 1px solid #eee;
+                    border-left-width: 4px;
+                ">
+                    <span style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif; 
+                        font-size: 14px; 
+                        font-weight: bold; 
+                        color: #2c0005; 
+                        display: block; 
+                        margin-bottom: 10px;
+                    ">推荐摘要：微醺的轮廓</span>
+                    <p style="font-size: 15px; line-height: 1.6; text-align: justify; margin: 0;">
+                        “前半生的盲盒是定数，后半生只剩虚无的轮廓。身边藏着微服私访的千金，手里端着半推半就的红酒，我在梦里的加班夜忐忑独饮，担心着那两个小时的代谢期，究竟能不能骗过现实的规则。”
+                    </p>
+                </section>
+
+            </section>
+
+            <!-- 页尾 -->
+            <footer style="
+                text-align: center;
+                margin-top: 60px;
+                padding-top: 30px;
+                border-top: 1px solid #eee;
+                color: #999;
+                font-size: 12px;
+                letter-spacing: 0.2em;
+            ">
+                FIN
+                <div style="display: flex; justify-content: center; margin-top: 15px; gap: 8px;">
+                    <div style="width: 4px; height: 4px; background: #ddd; border-radius: 50%;"></div>
+                    <div style="width: 4px; height: 4px; background: #800020; border-radius: 50%;"></div>
+                    <div style="width: 4px; height: 4px; background: #ddd; border-radius: 50%;"></div>
+                </div>
+            </footer>
+
+        </section>
+    </section>
+
+</body>
+</html>
