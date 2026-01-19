@@ -33,7 +33,8 @@
             
             <!-- 导航栏：回到主页 -->
             <nav style="margin-bottom: 30px;">
-                <a href="index.html" style="
+                <!-- 注意：这里的 href 需要根据文件层级调整。如果在二级目录，通常是 ../index.html -->
+                <a href="../index.html" style="
                     text-decoration: none;
                     color: #800020; /* 酒红色 */
                     font-family: Arial, sans-serif;
@@ -273,7 +274,7 @@
                     </p>
                 </section>
 
-                <!-- 结尾：海报展示位 -->
+                <!-- 结尾：海报展示位 (已修复) -->
                 <section style="margin: 60px 0 20px 0; text-align: center;">
                     <div style="
                         display: inline-block;
@@ -285,13 +286,18 @@
                         transform: rotate(1deg);
                         border-radius: 2px;
                     ">
-                       <!-- 9:16 占位图，用户可替换 -->
+                        <!-- 
+                           修复说明：
+                           1. 删除了 aspect-ratio: 9/16; （这会导致强制拉伸变形）
+                           2. 补全了 img 标签的闭合符号 ">
+                        -->
                         <img src="story 0117 bg02.jpg" alt="封面图" style="
                             display: block;
                             width: 100%;
                             height: auto;
-                            aspect-ratio: 9/16;
                             background-color: #f1f5f9;
+                            border-radius: 1px;
+                        ">
                     </div>
                 </section>
 
