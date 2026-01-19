@@ -33,7 +33,8 @@
             
             <!-- 导航栏：回到主页 -->
             <nav style="margin-bottom: 30px;">
-                <a href="index.html" style="
+                <!-- 修正：添加 ../ 返回上一级目录 -->
+                <a href="../index.html" style="
                     text-decoration: none;
                     color: #bfa588;
                     font-family: Arial, sans-serif;
@@ -43,6 +44,7 @@
                     display: inline-block;
                     padding: 5px 0;
                     border-bottom: 1px solid transparent;
+                    opacity: 0.8;
                 ">
                     ← HOME
                 </a>
@@ -77,11 +79,10 @@
                         <g>
                             <rect x="20" y="15" width="160" height="80" fill="#f0f0f0" stroke="#333" stroke-width="2" rx="5" />
                             <rect x="160" y="45" width="10" height="20" fill="#333" rx="2" />
-                            <line x1="20" y1="95" x2="180" y2="95" stroke="#ccc" stroke-width="1" />
+                            <line x1="20" y="95" x2="180" y="95" stroke="#ccc" stroke-width="1" />
                         </g>
 
                         <!-- 下层冷藏室门 (动态 SMIL 动画) -->
-                        <!-- 使用 translate 和 scale 模拟开门效果 -->
                         <g transform="translate(20, 100)">
                             <g>
                                 <!-- 动画核心：宽度缩放模拟开门透视 -->
@@ -101,7 +102,7 @@
                                 <!-- 把手 -->
                                 <rect x="140" y="60" width="10" height="40" fill="#333" rx="2" />
                                 <!-- 光泽反光 -->
-                                <line x1="20" y1="10" x2="20" y2="170" stroke="#fff" stroke-width="2" opacity="0.5" />
+                                <line x1="20" y="10" x2="20" y2="170" stroke="#fff" stroke-width="2" opacity="0.5" />
                             </g>
                         </g>
                     </svg>
@@ -331,13 +332,17 @@
                         transform: rotate(-2deg); /* 向左倾斜，区别于上一篇 */
                         border-radius: 2px;
                     ">
-                        <!-- 9:16 占位图，这里预留给您的新封面 -->
-                        <img src="poster_placeholder.jpg" alt="Shelley Dream Diary Cover" style="
+                        <!-- 
+                           修正：
+                           1. 替换为正确的图片文件名 0118 bg02.jpg
+                           2. 去除 min-height，使用 height: auto 保持原比例
+                           3. 保持 width: 100% 适应容器
+                        -->
+                        <img src="0118 bg02.jpg" alt="Shelley Dream Diary Cover" style="
                             display: block;
                             width: 100%;
                             height: auto;
                             background-color: #f0f0f0;
-                            min-height: 400px;
                         " />
                     </div>
                 </section>
