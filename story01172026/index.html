@@ -274,7 +274,7 @@
                     </p>
                 </section>
 
-                <!-- 结尾：海报展示位 (已修复) -->
+                <!-- 结尾：海报展示位 -->
                 <section style="margin: 60px 0 20px 0; text-align: center;">
                     <div style="
                         display: inline-block;
@@ -286,11 +286,6 @@
                         transform: rotate(1deg);
                         border-radius: 2px;
                     ">
-                        <!-- 
-                           修复说明：
-                           1. 删除了 aspect-ratio: 9/16; （这会导致强制拉伸变形）
-                           2. 补全了 img 标签的闭合符号 ">
-                        -->
                         <img src="story 0117 bg02.jpg" alt="封面图" style="
                             display: block;
                             width: 100%;
@@ -306,11 +301,11 @@
                     margin-top: 40px; 
                     background-color: #fcfcfc; 
                     padding: 20px; 
+                    /* 修正：先定义通用边框，再定义左边框颜色，否则会被覆盖 */
+                    border: 1px solid #eee;
                     border-left: 4px solid #2c0005; 
                     font-style: italic;
                     color: #555;
-                    border: 1px solid #eee;
-                    border-left-width: 4px;
                 ">
                     <span style="
                         font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif; 
