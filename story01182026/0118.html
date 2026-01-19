@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shelley的手记：高跟鞋与回头路</title>
+</head>
+<body style="margin: 0; padding: 0; overflow-x: hidden; -webkit-text-size-adjust: 100%;">
+
+    <!-- 最外层容器：米白色背景与基础字体 -->
+    <section style="
+        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+        background-color: #f9f9f7;
+        background-image: linear-gradient(#e5e5e0 1px, transparent 1px), linear-gradient(90deg, #e5e5e0 1px, transparent 1px);
+        background-size: 50px 50px;
+        min-height: 100vh;
+        padding: 15px;
+        box-sizing: border-box;
+        text-align: left;
+    ">
+
+        <!-- 阅读卡片容器 -->
+        <section style="
+            max-width: 640px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px 25px;
+            box-sizing: border-box;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.02);
+            width: 100%;
+        ">
+            
+            <!-- 导航栏：回到主页 -->
+            <nav style="margin-bottom: 30px;">
+                <a href="index.html" style="
+                    text-decoration: none;
+                    color: #bfa588;
+                    font-family: Arial, sans-serif;
+                    font-size: 12px;
+                    letter-spacing: 1px;
+                    font-weight: bold;
+                    display: inline-block;
+                    padding: 5px 0;
+                    border-bottom: 1px solid transparent;
+                ">
+                    ← HOME
+                </a>
+            </nav>
+
+            <!-- 头部区域 -->
+            <header style="margin-bottom: 50px; text-align: center;">
+                
+                <!-- SVG 插图：会呼吸的冰箱 (SMIL 动画) -->
+                <div style="width: 200px; height: 300px; margin: 0 auto 20px auto;">
+                    <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+                        <!-- 阴影 -->
+                        <ellipse cx="100" cy="290" rx="80" ry="10" fill="#000" opacity="0.1" />
+
+                        <!-- 冰箱内部 (门打开时可见) -->
+                        <g>
+                            <rect x="25" y="20" width="150" height="260" fill="#fffbeb" rx="5" />
+                            <!-- 内部层板 -->
+                            <line x1="30" y1="80" x2="170" y2="80" stroke="#dcdcdc" stroke-width="1" />
+                            <line x1="30" y1="140" x2="170" y2="140" stroke="#dcdcdc" stroke-width="1" />
+                            <line x1="30" y1="200" x2="170" y2="200" stroke="#dcdcdc" stroke-width="1" />
+                            <!-- 内部物品 -->
+                            <circle cx="60" cy="65" r="10" fill="#e74c3c" opacity="0.8" />
+                            <rect x="120" y="110" width="20" height="30" fill="#3498db" opacity="0.6" />
+                            <path d="M50 190 L70 190 L60 170 Z" fill="#2ecc71" opacity="0.6" />
+                        </g>
+
+                        <!-- 冰箱外框轮廓 -->
+                        <rect x="20" y="15" width="160" height="270" fill="none" stroke="#333" stroke-width="2" rx="8" />
+
+                        <!-- 上层冷冻室门 (静态) -->
+                        <g>
+                            <rect x="20" y="15" width="160" height="80" fill="#f0f0f0" stroke="#333" stroke-width="2" rx="5" />
+                            <rect x="160" y="45" width="10" height="20" fill="#333" rx="2" />
+                            <line x1="20" y1="95" x2="180" y2="95" stroke="#ccc" stroke-width="1" />
+                        </g>
+
+                        <!-- 下层冷藏室门 (动态 SMIL 动画) -->
+                        <!-- 使用 translate 和 scale 模拟开门效果 -->
+                        <g transform="translate(20, 100)">
+                            <g>
+                                <!-- 动画核心：宽度缩放模拟开门透视 -->
+                                <animateTransform 
+                                    attributeName="transform" 
+                                    type="scale" 
+                                    values="1 1; 0.1 1; 1 1" 
+                                    keyTimes="0; 0.5; 1"
+                                    dur="6s" 
+                                    repeatCount="indefinite" 
+                                    calcMode="spline"
+                                    keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"
+                                />
+                                
+                                <!-- 门板主体 -->
+                                <rect x="0" y="0" width="160" height="185" fill="#f4f4f4" stroke="#333" stroke-width="2" rx="5" />
+                                <!-- 把手 -->
+                                <rect x="140" y="60" width="10" height="40" fill="#333" rx="2" />
+                                <!-- 光泽反光 -->
+                                <line x1="20" y1="10" x2="20" y2="170" stroke="#fff" stroke-width="2" opacity="0.5" />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+
+                <h1 style="
+                    font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                    font-weight: 700;
+                    letter-spacing: 0.1em;
+                    color: #2c3e50;
+                    font-size: 24px; 
+                    line-height: 1.4;
+                    margin: 0 0 10px 0;
+                ">Shelley的手记：<br>高跟鞋与回头路</h1>
+                
+                <div style="
+                    font-family: Arial, sans-serif;
+                    font-size: 12px;
+                    color: #bfa588;
+                    letter-spacing: 0.2em;
+                    text-transform: uppercase;
+                    margin-bottom: 15px;
+                ">High Heels & The Return Path</div>
+
+                <!-- 日期信息 -->
+                <div style="
+                    font-family: Arial, sans-serif;
+                    font-size: 11px;
+                    color: #999;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                ">06:00 AM · Shelley</div>
+                
+            </header>
+
+            <!-- 正文内容 -->
+            <section style="text-align: left;">
+                
+                <!-- 章节 01 -->
+                <section style="margin-bottom: 40px;">
+                    <h2 style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                        font-size: 18px;
+                        letter-spacing: 0.05em;
+                        color: #444;
+                        margin: 40px 0 20px 0;
+                        font-weight: bold;
+                        border-left: 4px solid #bfa588; /* 淡金色 */
+                        padding-left: 12px;
+                        line-height: 1.2;
+                    ">
+                        01. 建筑事务所里的冰箱与过期年会
+                    </h2>
+                    
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        梦境总是荒谬得一本正经。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        场景是以前那家建筑设计事务所，空间极大，处处透着一股讲究的设计感，线条利落，光影分明。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        我们却在那种地方热火朝天地讨论换冰箱。不是普通的置换，而是要买一个更大、更高级的冰箱。仿佛在这钢筋水泥的艺术殿堂里，我们最渴望的，是用最顶级的家电来填充那点市井的烟火气。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        现在的工作性质变了，有些像当年的公关（PR），要在这空旷的场地里接活动、搞策划。旧同事们兴致勃勃地翻找着业务线索，指着一条公司发布的信息让我核对。
+                    </p>
+                    <blockquote style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                        border-left: 3px solid #bfa588;
+                        margin: 30px 0;
+                        padding: 15px 20px;
+                        font-style: italic;
+                        color: #666;
+                        background: #fdfbf7; /* 极淡的米黄色背景 */
+                        font-size: 15px;
+                        line-height: 1.6;
+                    ">
+                        “你看，这家公司正在找年会场地，描述的空间调性跟我们这里简直严丝合缝，完全符合要求。”
+                    </blockquote>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        我凑过去细看，确实吻合。唯独看到最后的时间限制，心里凉了一截。对方白纸黑字写着，要办年会的日子是一月七号。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        我抬头，无奈地泼了一盆冷水：“今日已经是一月十八号了。”
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        空气静了一秒。再完美的匹配，过了期便是一纸废文。这业务，终究是拿不到了。你看，机会这东西，从来不等人，错过了便是错过了。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        为了生计，艺术总是要向商业低头的，可惜商业有时比艺术还冷酷。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        本约了下午三点的会，我踩着高跟鞋火急火燎地赶回去。结果呢？会议室空空如也，不知是取消了还是改期了。你看，职场就是这样，你跑断了腿，它却连个解释都懒得给你。扑了个空，倒也习惯了，正好省下力气去应付那些琐碎。
+                    </p>
+                </section>
+
+                <!-- 动态波浪分割线 (SVG SMIL) -->
+                <div style="margin: 40px 0; overflow: hidden; text-align: center;">
+                    <svg width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="none" style="max-width: 600px; display: inline-block;">
+                         <path d="M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10" fill="none" stroke="#dcdcdc" stroke-width="1.5" stroke-dasharray="4 4">
+                            <animate attributeName="d" values="M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10; M0 10 Q 75 20, 150 10 T 300 10 T 450 10 T 600 10; M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10" dur="8s" repeatCount="indefinite"/>
+                        </path>
+                    </svg>
+                </div>
+
+                <!-- 章节 02 -->
+                <section style="margin-bottom: 40px;">
+                    <h2 style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                        font-size: 18px;
+                        letter-spacing: 0.05em;
+                        color: #444;
+                        margin: 40px 0 20px 0;
+                        font-weight: bold;
+                        border-left: 4px solid #bfa588;
+                        padding-left: 12px;
+                        line-height: 1.2;
+                    ">
+                        02. 香水与加班费
+                    </h2>
+
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        梦里还有个类似泡泡玛特（Pop Mart）的抽奖活动，在那种充满设计感的空间里显得格外喧闹。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        人总是贪心的，总想着能博个彩头。我有三次机会。第一次，安慰奖，聊胜于无。第二次，空手而归，这才是人生常态。第三次，大奖当然没份，却得了一瓶小小的香水试用装。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        我打开闻了闻，气味极好，是一种干净、清冽的香。在这混浊的梦境里，这点香气竟成了唯一的慰藉。做人嘛，得不到最好的，有个小玩意儿哄哄自己也是好的。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        转头又是一地鸡毛。HR拿着考勤表来找我，眉头紧锁，说有个实习生小姑娘申请了加班工资，不合规矩。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        我看着HR那张精算的脸，心里觉得好笑。年轻人想要拿回属于自己的时间成本，公司却在计算几百块的得失。在这名利场里，我们计较的，永远是那些微不足道的剩余价值。
+                    </p>
+                </section>
+
+                <!-- 动态波浪分割线 -->
+                <div style="margin: 40px 0; overflow: hidden; text-align: center;">
+                    <svg width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="none" style="max-width: 600px; display: inline-block;">
+                         <path d="M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10" fill="none" stroke="#dcdcdc" stroke-width="1.5" stroke-dasharray="4 4">
+                            <animate attributeName="d" values="M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10; M0 10 Q 75 20, 150 10 T 300 10 T 450 10 T 600 10; M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10" dur="8s" repeatCount="indefinite"/>
+                        </path>
+                    </svg>
+                </div>
+
+                <!-- 章节 03 -->
+                <section style="margin-bottom: 40px;">
+                    <h2 style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                        font-size: 18px;
+                        letter-spacing: 0.05em;
+                        color: #444;
+                        margin: 40px 0 20px 0;
+                        font-weight: bold;
+                        border-left: 4px solid #bfa588;
+                        padding-left: 12px;
+                        line-height: 1.2;
+                    ">
+                        03. 渡河的姿态
+                    </h2>
+
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        梦里见到了以前那位做业务扩展（BD）的女高管。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        她还是老样子，干练、资深，永远在沟通业务，电话响个不停。她是那种把工作当作呼吸的女人，令人敬佩，也令人心惊。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        我和她沿着河边散步，聊天。去的时候，河岸干爽，风平浪静。我们聊着那些宏大的业务，仿佛未来可期。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        过了一会儿，我看时间差不多了，为了赶上下午三点的那场会，我准备往回走。谁知回程时，潮水涨了。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        原本干爽的路面漫上了水，浑浊不清。我看着脚下那双高跟皮鞋，真皮的底，样式考究，价格不菲。若是就这么趟过去，这双鞋算是废了。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        我犹豫了。那一刻，什么业务，什么那个不得不赶的会议，都比不上这双鞋重要。在这泥沙俱下的职场里，保护好自己的羽毛（和鞋子），比什么都紧要。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        于是在梦里我做了一个极不体面、却极其务实的决定：脱掉鞋袜。我赤着脚，拎着那双昂贵的高跟鞋，小心翼翼地从水上渡了过去。姿势或许难看，但至少，我保住了我的鞋。
+                    </p>
+                </section>
+
+                <!-- 章节 04 -->
+                <section style="margin-bottom: 40px;">
+                    <h2 style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                        font-size: 18px;
+                        letter-spacing: 0.05em;
+                        color: #444;
+                        margin: 40px 0 20px 0;
+                        font-weight: bold;
+                        border-left: 4px solid #bfa588;
+                        padding-left: 12px;
+                        line-height: 1.2;
+                    ">
+                        04. 回到原点的方寸
+                    </h2>
+
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        折腾了一圈，梦的最后，我回到了办公室。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        依然是那个开放式的巨大空间，一眼望得到头。我径直走向那个熟悉的角落，坐下。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        那是多年前我就坐过的位置。不大，没有遮挡，一目了然，甚至连隐私都少得可怜。但坐下去的那一刻，我竟觉得无比舒服、踏实。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 24px; text-align: justify;">
+                        兜兜转转这么多年，换了工作，见了新人，脱了鞋又穿上鞋。到头来，我们能占有的，不过也就是这方寸之间的办公桌。
+                    </p>
+                </section>
+
+                <!-- 结尾：封面图展示区域 -->
+                <section style="margin: 60px 0 20px 0; text-align: center;">
+                    <div style="
+                        display: inline-block;
+                        width: 70%;
+                        max-width: 280px;
+                        background: #fff;
+                        padding: 10px;
+                        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.05);
+                        transform: rotate(-2deg); /* 向左倾斜，区别于上一篇 */
+                        border-radius: 2px;
+                    ">
+                        <!-- 9:16 占位图，这里预留给您的新封面 -->
+                        <img src="poster_placeholder.jpg" alt="Shelley Dream Diary Cover" style="
+                            display: block;
+                            width: 100%;
+                            height: auto;
+                            background-color: #f0f0f0;
+                            min-height: 400px;
+                        " />
+                    </div>
+                </section>
+
+                <!-- 梦醒结语 -->
+                <section style="margin-top: 40px; padding-top: 20px; border-top: 1px dashed #dcdcdc;">
+                    <p style="font-size: 15px; color: #666; line-height: 1.8; text-align: justify;">
+                        <span style="font-weight:bold; color: #bfa588;">【梦醒】</span>
+                        醒来时，我下意识地动了动脚趾，仿佛还残留着河水的凉意。这梦做得真累，却也真透彻。
+                    </p>
+                </section>
+
+                <!-- 推荐摘要 -->
+                <section style="
+                    margin-top: 40px; 
+                    background-color: #f9f9f7; 
+                    padding: 20px; 
+                    border-left: 4px solid #333; 
+                    font-style: italic;
+                    color: #555;
+                ">
+                    <span style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif; 
+                        font-size: 14px; 
+                        font-weight: bold; 
+                        color: #333; 
+                        display: block; 
+                        margin-bottom: 10px;
+                    ">推荐摘要：鞋与路</span>
+                    <p style="font-size: 15px; line-height: 1.6; text-align: justify; margin: 0;">
+                        “在宏大的建筑事务所里，我们对着一月七号的过期订单兴叹，转头热烈讨论着更高级的冰箱。在涨水的河岸边，我脱下高跟鞋赤足而行。我们在职场兜转经年，争取那瓶作为安慰奖的香水，计较实习生的加班费，最后发现，最舒服的位子，竟还是多年前那张一目了然的小书桌。”
+                    </p>
+                </section>
+
+            </section>
+
+            <!-- 页尾 -->
+            <footer style="
+                text-align: center;
+                margin-top: 60px;
+                padding-top: 30px;
+                border-top: 1px solid #eee;
+                color: #999;
+                font-size: 12px;
+                letter-spacing: 0.2em;
+            ">
+                FIN
+                <div style="display: flex; justify-content: center; margin-top: 15px; gap: 8px;">
+                    <div style="width: 4px; height: 4px; background: #dcdcdc; border-radius: 50%;"></div>
+                    <div style="width: 4px; height: 4px; background: #bfa588; border-radius: 50%;"></div>
+                    <div style="width: 4px; height: 4px; background: #dcdcdc; border-radius: 50%;"></div>
+                </div>
+            </footer>
+
+        </section>
+    </section>
+
+</body>
+</html>
