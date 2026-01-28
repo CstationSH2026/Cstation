@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Green的手记：纠缠与荒谬</title>
+</head>
+<body style="margin: 0; padding: 0; overflow-x: hidden; -webkit-text-size-adjust: 100%;">
+
+    <!-- 最外层容器：背景与基础字体 -->
+    <section style="
+        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+        background-color: #f0f9ff; /* 极淡的冷蓝背景 */
+        background-image: linear-gradient(#e0f2fe 1px, transparent 1px), linear-gradient(90deg, #e0f2fe 1px, transparent 1px);
+        background-size: 50px 50px;
+        min-height: 100vh;
+        padding: 15px;
+        box-sizing: border-box;
+        text-align: left;
+    ">
+
+        <!-- 阅读卡片容器 -->
+        <section style="
+            max-width: 640px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px 20px; /* 恢复标准内边距 */
+            box-sizing: border-box;
+            box-shadow: 0 15px 35px rgba(14, 165, 233, 0.05);
+            border: 1px solid rgba(255,255,255,0.9);
+            width: 100%;
+        ">
+            
+            <!-- 导航栏：回到主页 (已加回) -->
+            <nav style="margin-bottom: 20px;">
+                <a href="../index.html" style="
+                    text-decoration: none;
+                    color: #94a3b8;
+                    font-family: Arial, sans-serif;
+                    font-size: 12px;
+                    letter-spacing: 1px;
+                    font-weight: bold;
+                    display: inline-block;
+                    padding: 5px 0;
+                    border-bottom: 1px solid transparent;
+                ">
+                    ← HOME
+                </a>
+            </nav>
+            
+            <!-- 头部区域 -->
+            <header style="margin-bottom: 50px; text-align: center;">
+                
+                <!-- SVG 插图：超人蛋糕 (拟人化版) -->
+                <div style="width: 140px; height: 120px; margin: 0 auto 25px auto;">
+                    <svg viewBox="0 0 140 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+                        <g>
+                            <!-- 1. 超人披风 (被子) - 在身后飞扬 -->
+                            <path d="M45 55 Q 10 40, 5 20 L 5 80 Q 25 90, 45 80" fill="#fff" stroke="#94a3b8" stroke-width="1.5">
+                                 <animate attributeName="d" 
+                                    values="M45 55 Q 10 40, 5 20 L 5 80 Q 25 90, 45 80;
+                                            M45 55 Q 5 30, 0 15 L 0 85 Q 30 95, 45 80;
+                                            M45 55 Q 10 40, 5 20 L 5 80 Q 25 90, 45 80" 
+                                    dur="2s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M95 55 Q 130 40, 135 20 L 135 80 Q 115 90, 95 80" fill="#fff" stroke="#94a3b8" stroke-width="1.5">
+                                 <animate attributeName="d" 
+                                    values="M95 55 Q 130 40, 135 20 L 135 80 Q 115 90, 95 80;
+                                            M95 55 Q 135 30, 140 15 L 140 85 Q 110 95, 95 80;
+                                            M95 55 Q 130 40, 135 20 L 135 80 Q 115 90, 95 80" 
+                                    dur="2.5s" repeatCount="indefinite"/>
+                            </path>
+
+                            <!-- 2. 蛋糕本体 (斑兰绿) - 站在中间 -->
+                            <g>
+                                <!-- 呼吸动画 -->
+                                <animateTransform attributeName="transform" type="scale" values="1 1; 1.02 1.02; 1 1" dur="3s" repeatCount="indefinite" transform-origin="70 90"/>
+                                
+                                <!-- 蛋糕身体 -->
+                                <path d="M40 90 L 40 50 L 100 50 L 100 90 C 100 95, 40 95, 40 90 Z" fill="#86efac" stroke="#15803d" stroke-width="1.5"/>
+                                <!-- 蛋糕顶部 -->
+                                <ellipse cx="70" cy="50" rx="30" ry="8" fill="#bbf7d0" stroke="#15803d" stroke-width="1.5"/>
+                                
+                                <!-- 拟人化：小豆眼 (荒谬的坚定感) -->
+                                <circle cx="60" cy="65" r="1.5" fill="#15803d">
+                                    <animate attributeName="r" values="1.5; 0.5; 1.5" dur="4s" repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="80" cy="65" r="1.5" fill="#15803d">
+                                    <animate attributeName="r" values="1.5; 0.5; 1.5" dur="4s" repeatCount="indefinite" />
+                                </circle>
+                                
+                                <!-- 蛋糕纹理 -->
+                                <circle cx="50" cy="80" r="1" fill="#15803d" opacity="0.3"/>
+                                <circle cx="90" cy="80" r="1" fill="#15803d" opacity="0.3"/>
+                            </g>
+
+                            <!-- 3. 被子结 (系在脖子上) -->
+                            <path d="M60 55 Q 70 60, 80 55 L 75 65 Q 70 70, 65 65 Z" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+
+                            <!-- 4. 奇怪的线 (作为背景点缀) -->
+                            <path d="M20 100 Q 40 110, 60 105" stroke="#ef4444" stroke-width="1" fill="none" stroke-dasharray="2 2" opacity="0.5"/>
+                            <path d="M120 100 Q 100 110, 80 105" stroke="#ef4444" stroke-width="1" fill="none" stroke-dasharray="2 2" opacity="0.5"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <h1 style="
+                    font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                    font-weight: 700;
+                    letter-spacing: 0.1em;
+                    color: #0c4a6e;
+                    font-size: 26px; 
+                    line-height: 1.4;
+                    margin: 0 0 10px 0;
+                    text-shadow: 0 2px 4px rgba(0,0,0,0.03);
+                ">Green的手记：<br>纠缠与荒谬</h1>
+                
+                <div style="
+                    font-family: Arial, sans-serif;
+                    font-size: 12px;
+                    color: #94a3b8;
+                    letter-spacing: 0.2em;
+                    text-transform: uppercase;
+                    margin-bottom: 25px;
+                ">Entanglement & Absurdity</div>
+
+                <!-- 日期信息 -->
+                <div style="
+                    font-family: Arial, sans-serif;
+                    font-size: 11px;
+                    color: #cbd5e1;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                ">January 27, 2026 · 09:15 AM</div>
+                
+                <div style="
+                    font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                    font-size: 14px;
+                    color: #64748b;
+                    font-style: italic;
+                ">记录者 / Green</div>
+            </header>
+
+            <!-- 正文内容 -->
+            <section style="text-align: left;">
+                
+                <!-- 故事概要 -->
+                <div style="
+                    font-size: 15px;
+                    line-height: 1.8;
+                    color: #475569;
+                    margin-bottom: 40px;
+                    text-align: justify;
+                    font-style: italic;
+                    padding: 15px;
+                    background: rgba(14, 165, 233, 0.05); /* 极淡蓝 */
+                    border-left: 2px solid #0ea5e9;
+                ">
+                    从喉咙深处生生扯出的两根长线，开启了一场关于清理与剥离的梦魇。在斑兰蛋糕的虚荣交换中，我裹着被没收的白被子瑟瑟发抖，最终却发现所有人都挤在一个有尿骚味的屋顶，窥探着无法改变命运的职场八卦。
+                </div>
+
+                <!-- 章节 01 -->
+                <section style="margin-bottom: 40px;">
+                    <h2 style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                        font-size: 18px;
+                        letter-spacing: 0.05em;
+                        color: #0c4a6e;
+                        margin: 40px 0 20px 0;
+                        font-weight: bold;
+                        border-left: 4px solid #0ea5e9; /* 亮蓝 */
+                        padding-left: 12px;
+                        line-height: 1.2;
+                    ">
+                        01. 喉咙里的孽障
+                    </h2>
+                    
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        梦的开始，是一场毫无预兆的惊惶。我以为自己怀了孕。但这错觉只维持了片刻，随即我便发觉，在我身体里生长的，并非骨血，而是孽障。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        那是两根奇怪的线，像廉价KTV里的麦克风线，又像是某种生物的腺体。它们细长、柔韧，在我体内盘根错节，打着死结，像长条虫一般蠕动。恶心，极其恶心。
+                    </p>
+                    <blockquote style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                        border-left: 3px solid #ef4444; /* 红色警告 */
+                        margin: 30px 0;
+                        padding: 15px 20px;
+                        font-style: italic;
+                        color: #64748b;
+                        background: #fef2f2;
+                        font-size: 15px;
+                        line-height: 1.6;
+                    ">
+                        我下意识地伸手去拽。那一刻，我仿佛是在对自己进行一场无麻醉的手术。线越抽越长，从指尖甚至从喉咙深处被硬生生扯出来。触感黏腻，绵长得仿佛没有尽头。
+                    </blockquote>
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        直到最后一寸线被彻底抽离，我才长长吐出一口气。原来这副皮囊里，不知何时竟积攒了这么多无法消化的情绪与废话，非得这样血淋淋地扯出来，才算是个了断。
+                    </p>
+                </section>
+
+                <!-- 动态分割线 -->
+                <div style="margin: 40px 0; overflow: hidden; text-align: center;">
+                    <svg width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="none" style="max-width: 600px; display: inline-block;">
+                         <path d="M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 4">
+                            <animate attributeName="d" values="M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10; M0 10 Q 75 20, 150 10 T 300 10 T 450 10 T 600 10; M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10" dur="8s" repeatCount="indefinite"/>
+                        </path>
+                    </svg>
+                </div>
+
+                <!-- 章节 02 -->
+                <section style="margin-bottom: 40px;">
+                    <h2 style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                        font-size: 18px;
+                        letter-spacing: 0.05em;
+                        color: #0c4a6e;
+                        margin: 40px 0 20px 0;
+                        font-weight: bold;
+                        border-left: 4px solid #0ea5e9;
+                        padding-left: 12px;
+                        line-height: 1.2;
+                    ">
+                        02. 斑兰蛋糕与白被子
+                    </h2>
+
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        镜头切得干脆利落。转眼间，我已经身处前东家。气氛热烈得近乎诡异，今天是新加坡团队撤离中国的最后一天，告别并非惨淡，反而是一场盛大的狂欢。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        更有趣的是那群新加坡同事。他们一边备战淘汰赛——输了的人要滞留——一边却在兴致勃勃地讨论伴手礼。他们指名要带蛋糕回去。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        我听得好笑。曾几何时，都是我们要托人从新加坡带斑兰蛋糕回来，视若珍宝。如今风水轮流转，他们反倒要带我们的土特产回去。世事变迁，原来也不过是一块蛋糕的距离。
+                    </p>
+                    <p style="
+                        font-size: 16px; 
+                        line-height: 1.8; 
+                        color: #64748b; 
+                        margin-bottom: 24px; 
+                        text-align: left; 
+                        font-weight: bold; 
+                        margin-top: 30px; 
+                        padding: 10px; 
+                        background: rgba(14, 165, 233, 0.05);
+                        border-radius: 4px;
+                    ">
+                        在这满室的热闹里，只有我格格不入。别人都穿着礼服，只有我，身上紧紧裹着一条白被子。我不觉得羞耻，只觉得冷。这条被子是我的壳，我的避风港。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        可就在我稍微松懈的时候，不知是谁走过来说：“你的被子拿去洗了，不用管。”
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        不用管？怎么能不用管？在这个冰冷的、充满了算计与告别的名利场里，如果连这点温暖都被剥夺，我该如何自处？那种焦虑，比刚才从嘴里扯出电线还要真实。
+                    </p>
+                </section>
+
+                <!-- 动态分割线 -->
+                <div style="margin: 40px 0; overflow: hidden; text-align: center;">
+                    <svg width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="none" style="max-width: 600px; display: inline-block;">
+                         <path d="M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 4">
+                            <animate attributeName="d" values="M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10; M0 10 Q 75 20, 150 10 T 300 10 T 450 10 T 600 10; M0 10 Q 75 0, 150 10 T 300 10 T 450 10 T 600 10" dur="8s" repeatCount="indefinite"/>
+                        </path>
+                    </svg>
+                </div>
+
+                <!-- 章节 03 -->
+                <section style="margin-bottom: 40px;">
+                    <h2 style="
+                        font-family: 'Songti SC', 'Noto Serif SC', SimSun, serif;
+                        font-size: 18px;
+                        letter-spacing: 0.05em;
+                        color: #0c4a6e;
+                        margin: 40px 0 20px 0;
+                        font-weight: bold;
+                        border-left: 4px solid #0ea5e9;
+                        padding-left: 12px;
+                        line-height: 1.2;
+                    ">
+                        03. 屋顶的荒谬剧场
+                    </h2>
+
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        还没等我找回被子，梦境又是一转。这次是一家MCN公司，平房，屋顶却能走人。屋顶有个秘密角落，能听见楼下四位老板商议的人事机密。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        有个女同事早早去蹲守，也许是太紧张，她竟然就在那个角落就地解决了一下生理问题。原本这只是一个人的尴尬，可谁知，那个角落仿佛成了打卡圣地。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        二三十号人，像听演唱会一样往那个角落挤。大家心照不宣——都想知道自己是升是降。没人戳破那层窗户纸，也没人点破那个女生刚刚在那里的窘迫。
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #475569; margin-bottom: 24px; text-align: justify;">
+                        这就是职场。为了听一点哪怕是捕风捉影的消息，人们可以不顾体面，可以忍受污秽，可以挤在一起，像一群等待投喂的鸭子。
+                    </p>
+                    <p style="
+                        font-size: 16px; 
+                        line-height: 1.8; 
+                        color: #0c4a6e; 
+                        margin-bottom: 24px; 
+                        text-align: left; 
+                        font-weight: bold; 
+                        margin-top: 30px; 
+                        padding: 10px; 
+                        background: rgba(14, 165, 233, 0.05);
+                        border-radius: 4px;
+                    ">
+                        我们拼命清理身体里的杂质，拼命裹紧白被子想要一点温暖，最后却发现，大家都挤在一个有尿骚味的屋顶上，听着并不能改变命运的八卦。
+                    </p>
+                </section>
+
+                <!-- 结尾：封面图位置 (占位) -->
+                <section style="margin: 60px 0 20px 0; text-align: center;">
+                    <div style="
+                        display: inline-block;
+                        width: 70%;
+                        max-width: 280px;
+                        background: #fff;
+                        padding: 10px;
+                        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.05);
+                        transform: rotate(-1deg);
+                        border-radius: 2px;
+                    ">
+                        <!-- 9:16 封面图占位 -->
+                        <img src="story_0130_cover.jpg" alt="Story Cover" style="
+                            display: block;
+                            width: 100%;
+                            height: auto;
+                            background-color: #f1f5f9;
+                        " />
+                        <!-- 提示：请替换 src="story_0130_cover.jpg" 为实际图片 -->
+                    </div>
+                </section>
+
+            </section>
+
+            <!-- 页尾 -->
+            <footer style="
+                text-align: center;
+                margin-top: 60px;
+                padding-top: 30px;
+                border-top: 1px solid #e2e8f0;
+                color: #94a3b8;
+                font-size: 12px;
+                letter-spacing: 0.2em;
+            ">
+                FIN
+                <div style="display: flex; justify-content: center; margin-top: 15px; gap: 8px;">
+                    <div style="width: 4px; height: 4px; background: #cbd5e1; border-radius: 50%;"></div>
+                    <div style="width: 4px; height: 4px; background: #0ea5e9; border-radius: 50%;"></div>
+                    <div style="width: 4px; height: 4px; background: #cbd5e1; border-radius: 50%;"></div>
+                </div>
+            </footer>
+
+        </section>
+    </section>
+
+</body>
+</html>
