@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>专属自助洗浴预约通道</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A3C34',
+                        bgColor: '#F7F9F8',
+                        cardBg: '#FFFFFF',
+                        textMain: '#333333',
+                        borderColor: '#EAEAEA'
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .time-slot-active {
+                @apply bg-primary border-primary text-white;
+            }
+            .time-slot-disabled {
+                @apply bg-gray-100 border-gray-200 text-gray-400 cursor-not-allowed line-through;
+            }
+        }
+    </style>
+</head>
+<body class="bg-bgColor font-sans text-textMain">
+    <div class="max-w-md mx-auto bg-cardBg min-h-screen shadow-md relative">
+        <!-- 头部区域 -->
+        <div class="bg-primary text-white p-6 md:p-8 rounded-b-2xl">
+            <h1 class="text-xl md:text-2xl font-semibold mb-3">百联西郊 · 专属洗浴预约通道</h1>
+            <p class="text-sm md:text-base opacity-90">T+1 预约制，一客一密码。</p>
+        </div>
+
+        <!-- 表单区域 -->
+        <div class="p-5 md:p-6 pt-8">
+            <div class="mb-6">
+                <label for="userName" class="block text-base font-semibold mb-2">您的称呼</label>
+                <input type="text" id="userName" class="w-full p-4 border border-borderColor rounded-lg text-base bg-gray-50" placeholder="例：张女士 / Alice">
+            </div>
+            <div class="mb-6">
+                <label for="userPhone" class="block text-base font-semibold mb-2">联系电话</label>
+                <input type="tel" id="userPhone" class="w-full p-4 border border-borderColor rounded-lg text-base bg-gray-50" placeholder="请输入手机号码">
+            </div>
+            <div class="mb-6">
+                <label class="block text-base font-semibold mb-2">请选择明日洗浴时段</label>
+                <div class="grid grid-cols-2 gap-3" id="timeGrid">
+                    <!-- 时间段将通过JavaScript动态生成 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 提交按钮 -->
+        <div class="p-5 md:p-6">
+            <button id="submitBtn" class="w-full bg-primary text-white border-none p-5 text-lg font-semibold rounded-lg shadow-md hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center">
+                <span id="submitText">提交预约申请</span>
+                <div id="loadingIndicator" class="hidden ml-2">
+                    <svg class="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                </div>
+            </button>
+        </div>
+
+        <!-- 预约成功提示 -->
+        <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-lg p-6 max-w-sm w-full mx-4 transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">预约成功！</h3>
+                    <p class="text-gray-600 mb-4">您的预约信息已提交，我们会尽快与您联系确认。</p>
+                    <div id="bookingDetails" class="bg-gray-50 p-4 rounded-lg text-left mb-4">
+                        <!-- 预约详情将在这里显示 -->
+                    </div>
+                    <button id="closeModal" class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300">
+                        确定
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 管理员导出区域 -->
+        <div class="p-5 md:p-6 border-t border-dashed border-borderColor bg-gray-50 mt-6">
+            <p class="text-xs text-gray-500 text-center mb-3">👇 (内部演示专用) 值班管家导出通道</p>
+            <button id="exportBtn" class="w-full bg-white text-primary border border-primary py-3 text-base rounded-lg font-medium hover:bg-gray-50 transition-all duration-300 flex items-center justify-center">
+                <i class="fa fa-download mr-2"></i> 导出今日所有预约 (Excel)
+            </button>
+            <p class="text-xs text-gray-500 text-center mt-3">当前已收集: <span id="recordCount" class="text-primary font-bold">0</span> 条数据</p>
+        </div>
+    </div>
+
+    <script>
+        // 生成未来7天的日期选项
+        function generateDateOptions() {
+            const dateOptions = [];
+            const today = new Date();
+            
+            for (let i = 1; i <= 7; i++) {
+                const date = new Date(today);
+                date.setDate(today.getDate() + i);
+                
+                const dayOfWeek = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'][date.getDay()];
+                const month = date.getMonth() + 1;
+                const day = date.getDate();
+                
+                dateOptions.push({
+                    date: date,
+                    display: `${month}月${day}日 ${dayOfWeek}`
+                });
+            }
+            
+            return dateOptions;
+        }
+
+        // 生成时间段
+        function generateTimeSlots() {
+            const timeSlots = [];
+            // 从14:00开始，每30分钟一个时间段，到20:00结束
+            for (let hour = 14; hour < 20; hour++) {
+                for (let minute = 0; minute < 60; minute += 30) {
+                    const startHour = hour.toString().padStart(2, '0');
+                    const startMinute = minute.toString().padStart(2, '0');
+                    const endHour = (minute === 30 ? hour + 1 : hour).toString().padStart(2, '0');
+                    const endMinute = (minute === 30 ? '00' : '30');
+                    
+                    timeSlots.push(`${startHour}:${startMinute} - ${endHour}:${endMinute}`);
+                }
+            }
+            return timeSlots;
+        }
+
+        // 初始化页面
+        function initPage() {
+            // 生成并显示时间段
+            const timeGrid = document.getElementById('timeGrid');
+            const timeSlots = generateTimeSlots();
+            
+            timeGrid.innerHTML = '';
+            timeSlots.forEach((time, index) => {
+                const timeSlotDiv = document.createElement('div');
+                timeSlotDiv.className = 'time-slot';
+                timeSlotDiv.innerHTML = `
+                    <input type="radio" name="timeslot" id="t${index}" value="${time}" class="hidden">
+                    <label for="t${index}" class="flex justify-center items-center w-full h-11 border border-borderColor rounded-lg text-sm cursor-pointer transition-all duration-200 hover:bg-gray-50">
+                        ${time}
+                    </label>
+                `;
+                timeGrid.appendChild(timeSlotDiv);
+            });
+
+            // 从localStorage加载预约数据
+            loadBookings();
+            
+            // 绑定事件
+            document.getElementById('submitBtn').addEventListener('click', submitBooking);
+            document.getElementById('exportBtn').addEventListener('click', exportToExcel);
+            document.getElementById('closeModal').addEventListener('click', closeModal);
+        }
+
+        // 从localStorage加载预约数据
+        function loadBookings() {
+            const savedBookings = localStorage.getItem('bookingDatabase');
+            if (savedBookings) {
+                window.bookingDatabase = JSON.parse(savedBookings);
+                updateRecordCount();
+                updateTimeSlotAvailability();
+            } else {
+                window.bookingDatabase = [];
+            }
+        }
+
+        // 保存预约数据到localStorage
+        function saveBookings() {
+            localStorage.setItem('bookingDatabase', JSON.stringify(window.bookingDatabase));
+            updateRecordCount();
+            updateTimeSlotAvailability();
+        }
+
+        // 更新记录计数
+        function updateRecordCount() {
+            document.getElementById('recordCount').innerText = window.bookingDatabase.length;
+        }
+
+        // 更新时间段可用性
+        function updateTimeSlotAvailability() {
+            // 获取明天的日期字符串，格式为YYYY-MM-DD
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const tomorrowStr = tomorrow.toISOString().split('T')[0];
+            
+            // 获取明天的所有预约
+            const tomorrowBookings = window.bookingDatabase.filter(booking => 
+                booking.date === tomorrowStr
+            );
+            
+            // 获取所有时间段
+            const timeSlots = document.querySelectorAll('input[name="timeslot"]');
+            
+            // 重置所有时间段状态
+            timeSlots.forEach(slot => {
+                const label = document.querySelector(`label[for="${slot.id}"]`);
+                slot.disabled = false;
+                label.classList.remove('time-slot-disabled');
+                label.classList.remove('time-slot-active');
+            });
+            
+            // 禁用已被预约的时间段
+            tomorrowBookings.forEach(booking => {
+                timeSlots.forEach(slot => {
+                    if (slot.value === booking.time) {
+                        slot.disabled = true;
+                        const label = document.querySelector(`label[for="${slot.id}"]`);
+                        label.classList.add('time-slot-disabled');
+                    }
+                });
+            });
+        }
+
+        // 提交预约
+        function submitBooking() {
+            const nameInput = document.getElementById('userName');
+            const phoneInput = document.getElementById('userPhone');
+            const selectedSlot = document.querySelector('input[name="timeslot"]:checked');
+
+            // 表单验证
+            if (!nameInput.value.trim()) {
+                showToast('请输入您的称呼');
+                nameInput.focus();
+                return;
+            }
+
+            if (!phoneInput.value.trim()) {
+                showToast('请输入联系电话');
+                phoneInput.focus();
+                return;
+            }
+
+            // 简单的手机号验证
+            const phoneRegex = /^1[3-9]\d{9}$/;
+            if (!phoneRegex.test(phoneInput.value.trim())) {
+                showToast('请输入有效的手机号码');
+                phoneInput.focus();
+                return;
+            }
+
+            if (!selectedSlot) {
+                showToast('请选择洗浴时段');
+                return;
+            }
+
+            // 显示加载状态
+            document.getElementById('submitText').textContent = '提交中...';
+            document.getElementById('loadingIndicator').classList.remove('hidden');
+            document.getElementById('submitBtn').disabled = true;
+
+            // 模拟API请求延迟
+            setTimeout(() => {
+                // 获取明天的日期字符串，格式为YYYY-MM-DD
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                const tomorrowStr = tomorrow.toISOString().split('T')[0];
+                
+                // 生成随机密码
+                const password = Math.floor(1000 + Math.random() * 9000).toString();
+                
+                // 将数据存入"数据库"数组
+                const bookingData = {
+                    id: Date.now().toString(),
+                    name: nameInput.value.trim(),
+                    phone: phoneInput.value.trim(),
+                    time: selectedSlot.value,
+                    date: tomorrowStr,
+                    password: password,
+                    timestamp: new Date().toISOString()
+                };
+                
+                window.bookingDatabase.push(bookingData);
+                saveBookings();
+
+                // 显示预约详情
+                document.getElementById('bookingDetails').innerHTML = `
+                    <div class="space-y-2">
+                        <p><span class="font-medium">姓名：</span>${bookingData.name}</p>
+                        <p><span class="font-medium">电话：</span>${bookingData.phone}</p>
+                        <p><span class="font-medium">日期：</span>${formatDate(bookingData.date)}</p>
+                        <p><span class="font-medium">时间：</span>${bookingData.time}</p>
+                        <p><span class="font-medium">密码：</span><span class="font-bold text-primary">${bookingData.password}</span></p>
+                    </div>
+                `;
+                
+                // 显示成功模态框
+                showModal();
+
+                // 重置表单
+                nameInput.value = '';
+                phoneInput.value = '';
+                selectedSlot.checked = false;
+                
+                // 恢复按钮状态
+                document.getElementById('submitText').textContent = '提交预约申请';
+                document.getElementById('loadingIndicator').classList.add('hidden');
+                document.getElementById('submitBtn').disabled = false;
+            }, 1500);
+        }
+
+        // 格式化日期
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const month = date.getMonth() + 1;
+            const day = date.getDate();
+            const dayOfWeek = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'][date.getDay()];
+            return `${month}月${day}日 ${dayOfWeek}`;
+        }
+
+        // 显示模态框
+        function showModal() {
+            const modal = document.getElementById('successModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        // 关闭模态框
+        function closeModal() {
+            const modal = document.getElementById('successModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // 显示提示消息
+        function showToast(message) {
+            // 创建提示元素
+            const toast = document.createElement('div');
+            toast.className = 'fixed top-4 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg z-50 opacity-0 transition-opacity duration-300';
+            toast.textContent = message;
+            
+            // 添加到页面
+            document.body.appendChild(toast);
+            
+            // 显示提示
+            setTimeout(() => {
+                toast.classList.remove('opacity-0');
+                toast.classList.add('opacity-100');
+            }, 10);
+            
+            // 3秒后隐藏提示
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0');
+                
+                // 移除元素
+                setTimeout(() => {
+                    document.body.removeChild(toast);
+                }, 300);
+            }, 3000);
+        }
+
+        // 导出Excel功能
+        function exportToExcel() {
+            if (!window.bookingDatabase || window.bookingDatabase.length === 0) {
+                showToast('当前还没有人预约，无法导出！');
+                return;
+            }
+
+            // 添加BOM头，防止Excel打开中文乱码
+            let csvContent = "\uFEFF";
+            
+            // 写入表头
+            csvContent += "序号\t客人称呼\t联系电话\t预约日期\t预约时段\t密码\t提交时间\n";
+
+            // 写入数据
+            window.bookingDatabase.forEach((row, index) => {
+                csvContent += `${index + 1}\t${row.name}\t${row.phone}\t${formatDate(row.date)}\t${row.time}\t${row.password}\t${formatDateTime(row.timestamp)}\n`;
+            });
+
+            // 创建下载链接
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            const url = URL.createObjectURL(blob);
+            
+            link.setAttribute("href", url);
+            link.setAttribute("download", `洗浴预约名单_${formatDateForFilename(new Date())}.csv`);
+            link.style.visibility = 'hidden';
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // 显示导出成功提示
+            showToast('导出成功！');
+        }
+
+        // 格式化日期时间
+        function formatDateTime(dateTimeString) {
+            const date = new Date(dateTimeString);
+            const year = date.getFullYear();
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const day = date.getDate().toString().padStart(2, '0');
+            const hours = date.getHours().toString().padStart(2, '0');
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            
+            return `${year}-${month}-${day} ${hours}:${minutes}`;
+        }
+
+        // 格式化日期用于文件名
+        function formatDateForFilename(date) {
+            const year = date.getFullYear();
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const day = date.getDate().toString().padStart(2, '0');
+            
+            return `${year}${month}${day}`;
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', initPage);
+    </script>
+</body>
+</html>
