@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#ece7dd" />
+<title>西岸读书会｜第01—21期回顾</title>
+<style>
+:root{--paper:#ece7dd;--ink:#171612;--muted:#6f6a60;--hair:rgba(23,22,18,.18);--deep:#11100e;--warm:#9b643f;--glass:rgba(255,255,255,.38);--shadow:0 30px 80px rgba(29,22,15,.16)}
+*{box-sizing:border-box} html{scroll-behavior:smooth;background:var(--paper)} body{margin:0;color:var(--ink);background:var(--paper);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;z-index:999;background-image:radial-gradient(rgba(30,25,20,.09) .65px,transparent .65px);background-size:4px 4px;mix-blend-mode:multiply}
+.serif{font-family:"Songti SC","STSong","Noto Serif CJK SC",serif} .caps{text-transform:uppercase;letter-spacing:.22em}
+.hero{min-height:100svh;position:relative;padding:22px 20px 38px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:linear-gradient(145deg,#f4f0e8 0%,#e7e0d4 72%,#ddd1c0 100%)}
+.hero:after{content:"";position:absolute;width:72vw;height:72vw;border:1px solid rgba(23,22,18,.14);border-radius:50%;right:-36vw;top:11vh;box-shadow:0 0 0 10vw rgba(255,255,255,.07),0 0 0 20vw rgba(255,255,255,.04);animation:orb 16s ease-in-out infinite alternate}
+@keyframes orb{to{transform:translate(-6vw,5vh) scale(.96)}}
+.topline{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:.16em;color:#4e493f;border-top:1px solid var(--hair);padding-top:10px}
+.hero-center{position:relative;z-index:2;margin-top:10vh}
+.eyebrow{font-size:11px;letter-spacing:.34em;color:#6e6257;margin-bottom:18px}
+.hero h1{margin:0;font-size:clamp(56px,18vw,98px);line-height:.88;font-weight:500;letter-spacing:-.055em}
+.hero h1 span{display:block;margin-left:16vw;font-style:italic;font-weight:400;color:#72513d}
+.hero-copy{display:grid;grid-template-columns:72px 1fr;gap:18px;align-items:start;margin-top:34px;max-width:520px}
+.hero-index{font-size:34px;font-family:Georgia,serif;line-height:1;color:#80614d} .hero-copy p{margin:0;font-family:"Songti SC","STSong",serif;font-size:16px;line-height:1.9;color:#3c3933}
+.scroll-note{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;margin-top:22px;color:#69635b;font-size:10px;letter-spacing:.16em}
+.scroll-mark{width:1px;height:68px;background:linear-gradient(var(--ink),transparent);animation:scan 1.8s ease-in-out infinite} @keyframes scan{50%{transform:translateY(8px);opacity:.35}}
+.intro{padding:84px 22px 72px;position:relative} .intro-grid{max-width:820px;margin:auto;display:grid;grid-template-columns:1fr;gap:30px}
+.kicker{font-size:10px;letter-spacing:.28em;color:#8a6c58} .intro h2{font:400 38px/1.22 "Songti SC","STSong",serif;margin:6px 0 0} .intro p{font:15px/2 "Songti SC","STSong",serif;color:#575148;margin:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-top:18px} .stat{padding:18px 8px 16px;border-right:1px solid var(--hair)} .stat:last-child{border:0} .stat b{display:block;font:400 30px/1 Georgia,serif} .stat span{display:block;margin-top:8px;font-size:10px;color:#797166;letter-spacing:.12em}
+.archive{position:relative;padding:28px 0 96px} .archive-head{position:sticky;top:0;z-index:20;background:rgba(236,231,221,.88);backdrop-filter:blur(14px);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:11px 18px;display:flex;justify-content:space-between;align-items:center} .archive-head b{font-size:10px;letter-spacing:.22em;font-weight:500} .archive-head span{font:italic 12px Georgia,serif;color:#806a59}
+.gallery{max-width:820px;margin:0 auto} .exhibit{position:relative;padding:74px 20px 76px;min-height:100svh;display:grid;align-content:center;border-bottom:1px solid rgba(23,22,18,.12)}
+.exhibit:nth-child(even){background:rgba(255,255,255,.16)} .plate{font-size:9px;letter-spacing:.24em;color:#84796d;margin-bottom:18px;display:flex;justify-content:space-between;border-bottom:1px solid var(--hair);padding-bottom:8px}
+.work{display:grid;grid-template-columns:1fr;gap:22px} .frame-wrap{position:relative;width:min(78vw,390px,calc(max(240px,100svh - 160px)*var(--poster-ratio)));max-width:100%;margin:auto;transform:translateY(24px);opacity:0;transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .9s ease}
+.exhibit.visible .frame-wrap{transform:none;opacity:1} .frame{position:relative;padding:11px;background:#f7f4ed;box-shadow:0 22px 50px rgba(29,22,15,.17),0 0 0 1px rgba(50,40,30,.1)} .frame:before{content:"";position:absolute;inset:11px;pointer-events:none;box-shadow:inset 0 0 22px rgba(255,255,255,.38)} .frame img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;background:#ddd;filter:saturate(.96) contrast(.98);transition:transform .8s ease,filter .8s ease} .frame:hover img{transform:none;filter:saturate(1.05) contrast(1.01)}
+.frame .shine{position:absolute;inset:11px;overflow:hidden;pointer-events:none} .frame .shine:after{content:"";position:absolute;width:38%;height:140%;left:-55%;top:-20%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transform:rotate(8deg);transition:left 1.2s ease} .visible .frame .shine:after{left:125%}
+.caption{padding:0 2px;opacity:0;transform:translateY(18px);transition:.8s .15s ease} .exhibit.visible .caption{opacity:1;transform:none} .issue-no{font:italic 13px Georgia,serif;color:#8a694f;margin-bottom:9px} .caption h3{font:500 clamp(30px,9vw,48px)/1.16 "Songti SC","STSong",serif;letter-spacing:-.03em;margin:0 0 14px} .slogan{font:italic 16px/1.85 "Songti SC","STSong",serif;color:#544b42;margin:0 0 22px;border-left:1px solid #8f6c53;padding-left:14px} .meta{font-size:11px;line-height:1.8;letter-spacing:.06em;color:#726a60} .books{margin-top:18px;display:flex;flex-wrap:wrap;gap:7px} .book{font:12px/1.4 "Songti SC","STSong",serif;border:1px solid rgba(30,25,20,.18);padding:7px 9px;background:rgba(255,255,255,.22)}
+.alt-thumbs{display:flex;gap:8px;margin-top:10px;justify-content:center} .alt-thumbs button{border:0;background:none;padding:0;width:34px;height:46px;opacity:.48;box-shadow:0 0 0 1px rgba(0,0,0,.15);cursor:pointer} .alt-thumbs button.active{opacity:1;box-shadow:0 0 0 1px #1f1b17,0 0 0 3px var(--paper)} .alt-thumbs img{width:100%;height:100%;object-fit:contain;display:block}
+.interlude{padding:110px 22px;background:#171612;color:#e8e1d6;position:relative;overflow:hidden} .interlude:before{content:attr(data-count);font:italic 58vw/1 Georgia,serif;position:absolute;right:-7vw;top:-2vw;color:rgba(255,255,255,.035)} .interlude-inner{max-width:760px;margin:auto;position:relative;z-index:2} .interlude h2{font:400 40px/1.32 "Songti SC","STSong",serif;margin:0 0 24px} .interlude p{max-width:540px;font:15px/2 "Songti SC","STSong",serif;color:#bdb4a8;margin:0}
+.end{padding:96px 22px 120px;text-align:center} .end .seal{width:82px;height:82px;border:1px solid var(--ink);border-radius:50%;margin:0 auto 28px;display:grid;place-items:center;font:12px/1.4 "Songti SC","STSong",serif;letter-spacing:.2em;transform:rotate(-7deg)} .end h2{font:400 38px/1.35 "Songti SC","STSong",serif;margin:0 0 14px} .end p{font:14px/1.9 "Songti SC","STSong",serif;color:#6d655b;margin:0 auto;max-width:480px}
+.lightbox{position:fixed;inset:0;background:rgba(15,14,12,.94);z-index:1000;display:none;align-items:center;justify-content:center;padding:26px} .lightbox.show{display:flex} .lightbox img{width:auto;height:auto;object-fit:contain;max-width:100%;max-height:90vh;box-shadow:0 30px 100px #000} .lightbox button{position:absolute;right:18px;top:18px;width:42px;height:42px;border:1px solid rgba(255,255,255,.34);border-radius:50%;background:transparent;color:white;font-size:22px}
+.progress{position:fixed;left:0;top:0;height:2px;background:#6d4a34;width:0;z-index:2000}
+@media(min-width:700px){.hero{padding:30px 48px 42px} .hero-center{max-width:820px;margin-left:auto;margin-right:auto;width:100%} .hero h1{font-size:110px} .hero-copy{grid-template-columns:90px 1fr} .intro{padding:110px 48px} .intro-grid{grid-template-columns:1.1fr .9fr;align-items:end} .stats{grid-column:1/-1} .exhibit{padding:96px 48px} .work{grid-template-columns:minmax(280px,380px) 1fr;gap:56px;align-items:center} .exhibit:nth-child(even) .frame-wrap{order:2} .exhibit:nth-child(even) .caption{order:1} .frame-wrap{width:min(100%,calc(max(240px,100svh - 160px)*var(--poster-ratio)))}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important} .frame-wrap,.caption{opacity:1;transform:none}}
+.slideshow-controls{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:14px;color:var(--muted);font-size:11px}
+.slideshow-toggle{font:inherit;color:inherit;border:1px solid var(--hair);background:transparent;padding:6px 10px;border-radius:20px;cursor:pointer}
+.slideshow-toggle:focus-visible,.alt-thumbs button:focus-visible{outline:2px solid var(--warm);outline-offset:4px}
+
+/* 返回当前站点主页：兼容 GitHub Pages 子目录与 EdgeOne。 */
+.home-link{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:100;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:11px 17px;border:1px solid rgba(114,81,61,.3);border-radius:999px;background:#f4f0e8;color:#72513d;box-shadow:0 4px 20px rgba(29,22,15,.12);font:13px/1.4 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;text-decoration:none;letter-spacing:.04em;transition:background .2s ease,box-shadow .2s ease}
+.home-link:hover{background:#fffaf2;box-shadow:0 6px 24px rgba(29,22,15,.2)}
+.home-link:focus-visible{outline:2px solid var(--warm);outline-offset:4px}
+</style>
+</head>
+<body>
+<a class="home-link" href="../index.html" aria-label="返回 C-STATION 主页"><span aria-hidden="true">←</span>返回主页</a>
+<div class="progress" id="progress"></div>
+<header class="hero">
+  <div class="topline"><span>WEST BUND READING CLUB</span><span id="archive-period">JAN—OCT · 2026</span></div>
+  <div class="hero-center">
+    <div class="eyebrow">READING TOGETHER / 一起读书</div>
+    <h1 class="serif">西岸<span>读书会</span></h1>
+    <div class="hero-copy"><div class="hero-index" id="archive-range">01<br>—21</div><p id="archive-intro">从1月到10月，我们一起读书、分享，也慢慢熟悉彼此。<br>21期相聚，聊书里的故事，也聊各自的生活。</p></div>
+  </div>
+  <div class="scroll-note"><span>SCROLL TO EXPLORE</span><span class="scroll-mark"></span></div>
+</header>
+<section class="intro">
+ <div class="intro-grid">
+   <div><div class="kicker caps">About Our Gatherings</div><h2>每一次相聚，<br>都是一次深度连接。</h2></div>
+   <p>一本书带来一个话题，一位分享者带来一段经历。我们围坐在一起，交换想法，听听彼此为什么这样看、这样选。</p>
+   <div class="stats"><div class="stat"><b id="issue-count">21</b><span>期读书会</span></div><div class="stat"><b id="month-count">10</b><span>个月</span></div><div class="stat"><b>1</b><span>个读书会</span></div></div>
+ </div>
+</section>
+<section class="archive">
+  <div class="archive-head"><b>PAST GATHERINGS · 往期回顾</b><span>点击海报查看大图</span></div>
+  <div class="gallery" id="gallery"></div>
+</section>
+<section class="interlude" id="archive-closing" data-count="21"><div class="interlude-inner"><div class="kicker caps" id="meeting-count">After 21 Meetings</div><h2>聊过的书，<br>下次见面接着聊。</h2><p>它们进入下一次判断、一次选择、一段关系，甚至只是某个平常晚上，突然想起的一句话。读书会真正留下来的，厚度无关卷帙。是观念拆解了混沌，让你在熙攘中退后半步——不再是被裹挟的局中人，而是以冷静且包容的目光，洞悉这现实的底色。</p></div></section>
+<footer class="end"><div class="seal">西岸读书会<br>藏书</div><h2>To be continued.</h2><p id="archive-footer">西岸读书会 · 2026年1—10月 · 已举办21期<br>带上一本书，来聊聊。</p></footer>
+<div class="lightbox" id="lightbox"><button aria-label="关闭">×</button><img alt="海报大图" /></div>
+<script>
+// 更新入口：新增一期时，在下方 DATA 数组末尾添加资料及海报路径。
+const ARCHIVE_YEAR=2026;
+const DATA=[
+  {
+    "issue": "第01期",
+    "theme": "开篇：一起读书的开始",
+    "meta": "1月6日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "",
+    "books": [],
+    "imgs": [
+      "posters/issue-01-v1.jpg"
+    ],
+    "sizes": [
+      [
+        1536,
+        2752
+      ]
+    ]
+  },
+  {
+    "issue": "第02期",
+    "theme": "焕新2026",
+    "meta": "1月13日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "用一本书的厚度，垫高新一年的视野",
+    "books": [
+      "《上海老味道之生煎包的前世今生》",
+      "《生命之书：365天的静心冥想》",
+      "《激荡四十年》"
+    ],
+    "imgs": [
+      "posters/issue-02-v1.jpg"
+    ],
+    "sizes": [
+      [
+        1536,
+        2752
+      ]
+    ]
+  },
+  {
+    "issue": "第03期",
+    "theme": "人间至珍，不过真心与陪伴",
+    "meta": "1月27日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "从《贫穷的本质》体会人性的光辉，从《棉花帝国》读懂文明的经纬，再随《相约星期二》悟透生活的本质",
+    "books": [
+      "《贫穷的本质》",
+      "《棉花帝国》",
+      "《相约星期二》"
+    ],
+    "imgs": [
+      "posters/issue-03-v1.jpg",
+      "posters/issue-03-v2.jpg"
+    ],
+    "sizes": [
+      [
+        1536,
+        2752
+      ],
+      [
+        1536,
+        2752
+      ]
+    ]
+  },
+  {
+    "issue": "第04期",
+    "theme": "关于权力、财富与认知的对话",
+    "meta": "2月10日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "",
+    "books": [
+      "《棉花帝国》",
+      "《让你赚大钱》",
+      "《金融炼金术》"
+    ],
+    "imgs": [
+      "posters/issue-04-v1.jpg",
+      "posters/issue-04-v2.jpg"
+    ],
+    "sizes": [
+      [
+        1536,
+        2752
+      ],
+      [
+        1536,
+        2752
+      ]
+    ]
+  },
+  {
+    "issue": "第05期",
+    "theme": "微不足道的开始",
+    "meta": "2月24日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "当未来加速撞来，你敢不敢不看后视镜就变道？",
+    "books": [
+      "《预测之书：1000天以后的世界》",
+      "《繁荣的悖论》",
+      "《八次危机》"
+    ],
+    "imgs": [
+      "posters/issue-05-v1.jpg",
+      "posters/issue-05-v2.jpg"
+    ],
+    "sizes": [
+      [
+        1536,
+        2752
+      ],
+      [
+        1536,
+        2752
+      ]
+    ]
+  },
+  {
+    "issue": "第06期",
+    "theme": "脱轨的勇气",
+    "meta": "3月10日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "在时代的剧本外，寻找自己的旷野",
+    "books": [
+      "《不上班咖啡馆》",
+      "《富足一代》",
+      "《被讨厌的勇气》"
+    ],
+    "imgs": [
+      "posters/issue-06-v1.jpg",
+      "posters/issue-06-v2.jpg"
+    ],
+    "sizes": [
+      [
+        1536,
+        2752
+      ],
+      [
+        1536,
+        2752
+      ]
+    ]
+  },
+  {
+    "issue": "第07期",
+    "theme": "从星空到人间",
+    "meta": "3月24日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "在哲学的仰望中思考，在世俗的规则里行走",
+    "books": [
+      "《异类》",
+      "《西方哲学史》",
+      "《民法典与百姓生活100问》"
+    ],
+    "imgs": [
+      "posters/issue-07-v1.jpg",
+      "posters/issue-07-v2.jpg"
+    ],
+    "sizes": [
+      [
+        1536,
+        2752
+      ],
+      [
+        1536,
+        2752
+      ]
+    ]
+  },
+  {
+    "issue": "第08期",
+    "theme": "旷野工具箱",
+    "meta": "4月7日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "重塑自我的三块基石",
+    "books": [
+      "《消失的多巴胺》",
+      "《沃顿商学院最受欢迎的谈判课》",
+      "《真需求》"
+    ],
+    "imgs": [
+      "posters/issue-08-v1.jpg",
+      "posters/issue-08-v2.jpg"
+    ],
+    "sizes": [
+      [
+        1536,
+        2752
+      ],
+      [
+        1536,
+        2752
+      ]
+    ]
+  },
+  {
+    "issue": "第09期",
+    "theme": "众生相",
+    "meta": "4月21日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "车窗外的世界与心里的镜子——驶过魔都的日与夜，译码天赋，练习相爱",
+    "books": [
+      "《Gifts Differing》",
+      "《爱的艺术》",
+      "《我在上海开出租》"
+    ],
+    "imgs": [
+      "posters/issue-09-v1.jpg",
+      "posters/issue-09-v2.jpg"
+    ],
+    "sizes": [
+      [
+        1536,
+        2752
+      ],
+      [
+        1536,
+        2752
+      ]
+    ]
+  },
+  {
+    "issue": "第10期",
+    "theme": "认知、危机与繁荣",
+    "meta": "5月12日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "在风暴中掌舵，驶向文明的曙光",
+    "books": [
+      "《大繁荣》",
+      "《国家为什么会破产》",
+      "《认知觉醒》"
+    ],
+    "imgs": [
+      "posters/issue-10-v1.jpg",
+      "posters/issue-10-v2.jpg"
+    ],
+    "sizes": [
+      [
+        941,
+        1672
+      ],
+      [
+        941,
+        1672
+      ]
+    ]
+  },
+  {
+    "issue": "第11期",
+    "theme": "裂缝与微光",
+    "meta": "5月19日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "在算法坐标里重见生活",
+    "books": [
+      "《纳瓦尔宝典》",
+      "《跑外卖：一个女骑手的世界》",
+      "《亲密关系》"
+    ],
+    "imgs": [
+      "posters/issue-11-v1.jpg",
+      "posters/issue-11-v2.jpg"
+    ],
+    "sizes": [
+      [
+        941,
+        1672
+      ],
+      [
+        941,
+        1672
+      ]
+    ]
+  },
+  {
+    "issue": "第12期",
+    "theme": "在风雪中写信给陌生人",
+    "meta": "6月2日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "三本书，三封未寄出的信",
+    "books": [
+      "《我和这些孩子的故事》",
+      "《弗吉尼亚·伍尔夫传：作家的生命》",
+      "《我们为什么不爱了：走出亲密内耗》"
+    ],
+    "imgs": [
+      "posters/issue-12-v1.jpg",
+      "posters/issue-12-v3.jpg"
+    ],
+    "sizes": [
+      [
+        941,
+        1672
+      ],
+      [
+        941,
+        1672
+      ]
+    ]
+  },
+  {
+    "issue": "第13期",
+    "theme": "表面之下",
+    "meta": "6月16日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "三本书，三种透视",
+    "books": [
+      "《制裁与经济战》",
+      "《菊与刀》",
+      "《林徽因传》"
+    ],
+    "imgs": [
+      "posters/issue-13-v1.jpg",
+      "posters/issue-13-v2.jpg"
+    ],
+    "sizes": [
+      [
+        941,
+        1672
+      ],
+      [
+        941,
+        1672
+      ]
+    ]
+  },
+  {
+    "issue": "第14期",
+    "theme": "水面之下的博弈",
+    "meta": "6月30日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "看见看不见的规则",
+    "books": [
+      "《文明》",
+      "《蒋文华·博弈论50讲》",
+      "《联合政府与一党训政》"
+    ],
+    "imgs": [
+      "posters/issue-14-v1.jpg",
+      "posters/issue-14-v3.jpg"
+    ],
+    "sizes": [
+      [
+        941,
+        1672
+      ],
+      [
+        941,
+        1672
+      ]
+    ]
+  },
+  {
+    "issue": "第15期",
+    "theme": "入世，是一种修行",
+    "meta": "7月14日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "三把钥匙，一把锁",
+    "books": [
+      "《成事》",
+      "《乡土中国》",
+      "《蔡澜赚钱的艺术》"
+    ],
+    "imgs": [
+      "posters/issue-15-v1.jpg",
+      "posters/issue-15-v2.jpg"
+    ],
+    "sizes": [
+      [
+        941,
+        1672
+      ],
+      [
+        941,
+        1672
+      ]
+    ]
+  },
+  {
+    "issue": "第16期",
+    "theme": "潮起潮落",
+    "meta": "7月28日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "底层的结构从未改变",
+    "books": [
+      "《置身事内》",
+      "《经济运行的逻辑》",
+      "《基层中国的运行逻辑》"
+    ],
+    "imgs": [
+      "posters/issue-16-v2.jpg",
+      "posters/issue-16-v1.jpg"
+    ],
+    "sizes": [
+      [
+        941,
+        1672
+      ],
+      [
+        941,
+        1672
+      ]
+    ]
+  },
+  {
+    "issue": "第17期",
+    "theme": "拆开看看",
+    "meta": "8月11日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "里面到底长什么样",
+    "books": [
+      "《经济运行的逻辑》",
+      "《邬达克》",
+      "《你要如何衡量你的人生》"
+    ],
+    "imgs": [
+      "posters/issue-17-v1.jpg",
+      "posters/issue-17-v2.jpg"
+    ],
+    "sizes": [
+      [
+        941,
+        1672
+      ],
+      [
+        941,
+        1672
+      ]
+    ]
+  },
+  {
+    "issue": "第18期",
+    "theme": "折叠的三界",
+    "meta": "8月25日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "在市井中寻味，在系统里打工，在代码间破局",
+    "books": [
+      "《科技共和国》",
+      "《太白金星有点烦》",
+      "《上海Taste》"
+    ],
+    "imgs": [
+      "posters/issue-18-v1.jpg",
+      "posters/issue-18-v2.jpg"
+    ],
+    "sizes": [
+      [
+        941,
+        1672
+      ],
+      [
+        941,
+        1672
+      ]
+    ]
+  },
+  {
+    "issue": "第19期",
+    "theme": "你的人生体检报告",
+    "meta": "9月8日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "三个指标都不达标，你还敢不读书？",
+    "books": [
+      "《穷查理宝典》",
+      "《我们为何不幸福》",
+      "《遥远的救世主》"
+    ],
+    "imgs": [
+      "posters/issue-19-v1.jpg",
+      "posters/issue-19-v2.jpg"
+    ],
+    "sizes": [
+      [
+        941,
+        1672
+      ],
+      [
+        941,
+        1672
+      ]
+    ]
+  },
+  {
+    "issue": "第20期",
+    "theme": "重写你的大脑剧本",
+    "meta": "9月22日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "大脑不是定稿，是可以反复修改的手稿",
+    "books": [
+      "《汉字革命》",
+      "《原始思维》",
+      "《如何解锁逆龄大脑》"
+    ],
+    "imgs": [
+      "posters/issue-20-v1.jpg",
+      "posters/issue-20-v2.jpg"
+    ],
+    "sizes": [
+      [
+        941,
+        1672
+      ],
+      [
+        941,
+        1672
+      ]
+    ]
+  },
+  {
+    "issue": "第21期",
+    "theme": "从山河到岁月",
+    "meta": "10月13日 周二 · 19:00",
+    "loc": "星扬商场一楼和益社",
+    "slogan": "从地理读文明，从荒野读生命，从金融读兴衰",
+    "books": [
+      "《中国历史地理十五讲》",
+      "《可可西里的动物精灵》",
+      "《中国是部金融史》"
+    ],
+    "imgs": [
+      "posters/issue-21-v1.jpg",
+      "posters/issue-21-v2.jpg"
+    ],
+    "sizes": [
+      [
+        941,
+        1672
+      ],
+      [
+        941,
+        1672
+      ]
+    ]
+  }
+];
+// 期数与时间范围根据 DATA 自动更新，无需逐处修改。
+const months=DATA.map(d=>Number(d.meta.match(/(\d+)月/)[1]));
+const firstMonth=Math.min(...months),lastMonth=Math.max(...months),total=DATA.length;
+const monthNames=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+const monthRange=firstMonth===lastMonth?`${firstMonth}月`:`${firstMonth}—${lastMonth}月`;
+document.title=`西岸读书会｜第01—${String(total).padStart(2,'0')}期回顾`;
+document.getElementById('archive-range').innerHTML=`01<br>—${String(total).padStart(2,'0')}`;
+document.getElementById('archive-period').textContent=`${monthNames[firstMonth-1]}—${monthNames[lastMonth-1]} · ${ARCHIVE_YEAR}`;
+document.getElementById('archive-intro').innerHTML=`从${firstMonth}月到${lastMonth}月，我们一起读书、分享，也慢慢熟悉彼此。<br>${total}期相聚，聊书里的故事，也聊各自的生活。`;
+document.getElementById('issue-count').textContent=total;
+document.getElementById('month-count').textContent=lastMonth-firstMonth+1;
+document.getElementById('meeting-count').textContent=`After ${total} Meetings`;
+document.getElementById('archive-closing').dataset.count=total;
+document.getElementById('archive-footer').innerHTML=`西岸读书会 · ${ARCHIVE_YEAR}年${monthRange} · 已举办${total}期<br>带上一本书，来聊聊。`;
+const gallery=document.getElementById('gallery');
+function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+DATA.forEach((d,i)=>{
+ const e=document.createElement('article'); e.className='exhibit'; e.dataset.issue=i+1;
+ const [posterWidth,posterHeight]=d.sizes[0];
+ const books=(d.books||[]).map(b=>`<span class="book">${esc(b)}</span>`).join('');
+ const thumbs=(d.imgs||[]).length>1?`<div class="alt-thumbs">${d.imgs.map((src,j)=>`<button class="${j===0?'active':''}" data-src="${esc(src)}" data-width="${d.sizes[j][0]}" data-height="${d.sizes[j][1]}" aria-label="切换海报 ${j+1}" aria-pressed="${j===0}"><img src="${esc(src)}" alt=""></button>`).join('')}</div><div class="slideshow-controls"><span>每6秒切换</span><button type="button" class="slideshow-toggle" aria-pressed="false">暂停轮播</button></div>`:'';
+ e.innerHTML=`<div class="plate"><span>SESSION ${String(i+1).padStart(2,'0')} / ${DATA.length}</span><span>WEST BUND READING CLUB</span></div><div class="work"><div class="frame-wrap" style="--poster-ratio:${posterWidth / posterHeight}"><div class="frame"><img class="main-poster" width="${posterWidth}" height="${posterHeight}" src="${esc(d.imgs[0])}" alt="${esc(d.issue+' '+d.theme)}"><span class="shine"></span></div>${thumbs}</div><div class="caption"><div class="issue-no">${esc(d.issue)} · Session No. ${String(i+1).padStart(3,'0')}</div><h3>${esc(d.theme)}</h3>${d.slogan?`<p class="slogan">“${esc(d.slogan)}”</p>`:''}<div class="meta">${esc(d.meta)}<br>${esc(d.loc)}</div>${books?`<div class="books">${books}</div>`:''}</div></div>`;
+ gallery.appendChild(e);
+});
+// 自动切换仅在海报进入视野后运行；保留手动切换和独立暂停。
+const SLIDESHOW_INTERVAL=6000;
+const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+const slideshows=new Map();
+document.querySelectorAll('.frame-wrap').forEach(w=>{
+ const buttons=Array.from(w.querySelectorAll('.alt-thumbs button'));
+ if(buttons.length<2)return;
+ const state={buttons,paused:reducedMotion.matches,inView:false,nextAt:Date.now()+SLIDESHOW_INTERVAL,token:0,busy:false};
+ slideshows.set(w,state);
+ const toggle=w.querySelector('.slideshow-toggle');
+ toggle.textContent=state.paused?'播放轮播':'暂停轮播';
+ toggle.setAttribute('aria-pressed',String(state.paused));
+});
+function isSlideshowBlocked(w,state){
+ return document.hidden||!state.inView||state.paused||document.getElementById('lightbox').classList.contains('show')||w.contains(document.activeElement)||(matchMedia('(hover: hover)').matches&&w.matches(':hover'));
+}
+async function showPoster(w,button,automatic=false){
+ const state=slideshows.get(w);
+ if(!state)return;
+ state.nextAt=Date.now()+SLIDESHOW_INTERVAL;
+ if(button.classList.contains('active'))return;
+ const token=++state.token;state.busy=true;
+ const loaded=new Image();loaded.src=button.dataset.src;
+ try{await loaded.decode();}catch{if(token===state.token)state.busy=false;return;}
+ if(token!==state.token)return;
+ state.busy=false;
+ if(automatic&&isSlideshowBlocked(w,state))return;
+ const img=w.querySelector('.main-poster');
+ img.width=Number(button.dataset.width);img.height=Number(button.dataset.height);img.src=button.dataset.src;
+ w.style.setProperty('--poster-ratio',Number(button.dataset.width)/Number(button.dataset.height));
+ state.buttons.forEach(b=>{const active=b===button;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
+ if(!reducedMotion.matches&&img.animate)img.animate([{opacity:.25},{opacity:1}],{duration:650,easing:'ease-out'});
+}
+const io=new IntersectionObserver(entries=>entries.forEach(entry=>{
+ if(entry.isIntersecting)entry.target.classList.add('visible');
+ const state=slideshows.get(entry.target.querySelector('.frame-wrap'));
+ if(state){state.inView=entry.isIntersecting;state.nextAt=Date.now()+SLIDESHOW_INTERVAL;}
+}),{threshold:.18});
+document.querySelectorAll('.exhibit').forEach(e=>io.observe(e));
+setInterval(()=>{
+ const now=Date.now();
+ slideshows.forEach((state,w)=>{
+  if(isSlideshowBlocked(w,state)){state.nextAt=now+SLIDESHOW_INTERVAL;return;}
+  if(state.busy||now<state.nextAt)return;
+  const active=state.buttons.findIndex(b=>b.classList.contains('active'));
+  showPoster(w,state.buttons[(active+1)%state.buttons.length],true);
+ });
+},500);
+reducedMotion.addEventListener('change',e=>{
+ if(!e.matches)return;
+ slideshows.forEach((state,w)=>{state.paused=true;const b=w.querySelector('.slideshow-toggle');b.textContent='播放轮播';b.setAttribute('aria-pressed','true');});
+});
+document.addEventListener('click',e=>{
+ const toggle=e.target.closest('.slideshow-toggle');
+ if(toggle){const state=slideshows.get(toggle.closest('.frame-wrap'));state.paused=!state.paused;state.nextAt=Date.now()+SLIDESHOW_INTERVAL;toggle.textContent=state.paused?'播放轮播':'暂停轮播';toggle.setAttribute('aria-pressed',String(state.paused));return;}
+ const b=e.target.closest('.alt-thumbs button');
+ if(b){showPoster(b.closest('.frame-wrap'),b);return;}
+ const p=e.target.closest('.main-poster');
+ if(p){const lb=document.getElementById('lightbox');lb.querySelector('img').src=p.src;lb.classList.add('show');}
+ if(e.target.closest('#lightbox button')||e.target.id==='lightbox')document.getElementById('lightbox').classList.remove('show');
+});
+addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('lightbox').classList.remove('show');});
+addEventListener('scroll',()=>{const h=document.documentElement; const max=h.scrollHeight-h.clientHeight; document.getElementById('progress').style.width=(scrollY/max*100)+'%'} ,{passive:true});
+</script>
+</body></html>
